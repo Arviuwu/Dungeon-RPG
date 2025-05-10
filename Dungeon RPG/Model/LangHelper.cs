@@ -10,26 +10,19 @@ namespace Dungeon_RPG.Model
 
         static LangHelper()
         {
-            _rm = new ResourceManager("Dungeon_RPG.Resources.Menu", Assembly.GetExecutingAssembly());
+            _rm = new ResourceManager("Dungeon_RPG.Resources.Languages.Menu", Assembly.GetExecutingAssembly());
         }
 
-        public static string? GetString(string name)
+        public static string GetString(string name)
         {
-            if (!String.IsNullOrEmpty(_rm.GetString(name)))
-            {
-                return _rm.GetString(name);
-            }
-            else
-            {
-                return "Error";
-            }
+                return  string.IsNullOrEmpty(_rm.GetString(name)) || string.IsNullOrEmpty(name) ? "???" : _rm.GetString(name);
         }
 
         public static void ChangeLanguage(string language)
         {
-            var cultureInfo = new CultureInfo(language);
+            CultureInfo cultureInfo = new(language);
 
-            CultureInfo.CurrentCulture = cultureInfo;
+            //CultureInfo.CurrentCulture = cultureInfo; not needed?
             CultureInfo.CurrentUICulture = cultureInfo;
         }
     }

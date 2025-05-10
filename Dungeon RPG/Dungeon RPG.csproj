@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\Menu.Designer.cs">
+    <Compile Update="Resources\Languages\Menu.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Menu.resx</DependentUpon>
@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\Menu.resx">
+    <EmbeddedResource Update="Resources\Languages\Menu.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Menu.Designer.cs</LastGenOutput>
     </EmbeddedResource>

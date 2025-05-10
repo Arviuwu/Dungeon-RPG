@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Dungeon_RPG.Resources {
+namespace Dungeon_RPG.Resources.Languages {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Dungeon_RPG.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Dungeon_RPG.Resources.Menu", typeof(Menu).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Dungeon_RPG.Resources.Languages.Menu", typeof(Menu).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
