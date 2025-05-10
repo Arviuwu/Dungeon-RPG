@@ -2,12 +2,22 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Dungeon_RPG"
-             StartupUri="MainWindow.xaml">
+             StartupUri="MainWindow.xaml"
+             xmlns:view="clr-namespace:Dungeon_RPG.View"
+             xmlns:vm="clr-namespace:Dungeon_RPG.ViewModel">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/Styles/GlobalStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+        
+        <DataTemplate DataType="{x:Type vm:MainMenuViewModel}">
+            <view:MainMenu />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CharacterCreatorViewModel}">
+            <view:CharacterCreator/>
+        </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

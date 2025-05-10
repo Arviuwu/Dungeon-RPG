@@ -4,6 +4,8 @@ namespace Dungeon_RPG.ViewModel
 {
     public class MainMenuViewModel : BaseViewModel
     {
+        private readonly INavigationService _navigation;
+
         #region Localization
         public string Play => LangHelper.GetString("UI_TXT_Play");
         public string Items => LangHelper.GetString("UI_TXT_Items");
@@ -13,7 +15,15 @@ namespace Dungeon_RPG.ViewModel
 
         #endregion
         public RelayCommand ToggleLanguageCommand { get; }
+        public RelayCommand GoToPlay { get; }
         private string currentLanguage = "en";
+
+        public MainMenuViewModel(INavigationService navigation)
+        {
+            _navigation = navigation;
+            ToggleLanguageCommand = new RelayCommand(_ => ToggleLanguage());
+            GoToPlay = new RelayCommand(_ =>_navigation.NavigateTo( new CharacterCreatorViewModel(_navigation)));
+        }
         private void ToggleLanguage()
         {
             currentLanguage = currentLanguage == "en" ? "de" : "en";
@@ -24,11 +34,5 @@ namespace Dungeon_RPG.ViewModel
             OnPropertyChanged(nameof(SaveFile));
             OnPropertyChanged(nameof(Language));
         }
-        public MainMenuViewModel()
-        {
-            //LangHelper.ChangeLanguage("de");
-            ToggleLanguageCommand = new RelayCommand(_ => ToggleLanguage());
-        }
 
-    }
-}
+    } }

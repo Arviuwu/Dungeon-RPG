@@ -11,7 +11,6 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="View\UserControls\" />
   </ItemGroup>
 
   <ItemGroup>
