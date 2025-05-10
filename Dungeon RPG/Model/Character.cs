@@ -1,4 +1,4 @@
-﻿namespace Dungeon_RPG.Model
+namespace Dungeon_RPG.Model
 {
     class Character
     {
