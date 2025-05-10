@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dungeon_RPG.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +14,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Dungeon_RPG.View.UserControls
+namespace Dungeon_RPG.View
 {
     /// <summary>
-    /// Interaction logic for CharacterStatsDisplay.xaml
+    /// Interaction logic for StatAllocator.xaml
     /// </summary>
-    public partial class CharacterStatsDisplay : UserControl
+    public partial class StatAllocator : UserControl
     {
-        public CharacterStatsDisplay()
+        public StatAllocator()
         {
             InitializeComponent();
+            //DataContext = new StatAllocatorViewModel();
         }
     }
 }

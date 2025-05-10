@@ -9,6 +9,7 @@ namespace Dungeon_RPG.ViewModel
         public RelayCommand GoToMenu { get; }
         public CharacterCreatorViewModel(INavigationService navigation)
         {
+            Character Character = new();
             _navigation = navigation;
             GoToMenu = new RelayCommand(_ => _navigation.NavigateTo(new MainMenuViewModel(navigation)));
         }
