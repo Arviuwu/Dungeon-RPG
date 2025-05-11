@@ -61,11 +61,47 @@ namespace Dungeon_RPG.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Charisma.
+        /// </summary>
+        internal static string UI_TXT_Charisma {
+            get {
+                return ResourceManager.GetString("UI_TXT_Charisma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Constitution.
+        /// </summary>
+        internal static string UI_TXT_Constitution {
+            get {
+                return ResourceManager.GetString("UI_TXT_Constitution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create your Character.
         /// </summary>
         internal static string UI_TXT_CreateCharacter {
             get {
                 return ResourceManager.GetString("UI_TXT_CreateCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dexterity.
+        /// </summary>
+        internal static string UI_TXT_Dexterity {
+            get {
+                return ResourceManager.GetString("UI_TXT_Dexterity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Intelligence.
+        /// </summary>
+        internal static string UI_TXT_Intelligence {
+            get {
+                return ResourceManager.GetString("UI_TXT_Intelligence", resourceCulture);
             }
         }
         
@@ -88,6 +124,42 @@ namespace Dungeon_RPG.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Menu.
+        /// </summary>
+        internal static string UI_TXT_Menu {
+            get {
+                return ResourceManager.GetString("UI_TXT_Menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string UI_TXT_Name {
+            get {
+                return ResourceManager.GetString("UI_TXT_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play.
+        /// </summary>
+        internal static string UI_TXT_Play {
+            get {
+                return ResourceManager.GetString("UI_TXT_Play", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Points remaining.
+        /// </summary>
+        internal static string UI_TXT_PointsRemaining {
+            get {
+                return ResourceManager.GetString("UI_TXT_PointsRemaining", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Selected Save File.
         /// </summary>
         internal static string UI_TXT_SaveFile {
@@ -102,6 +174,24 @@ namespace Dungeon_RPG.Resources.Languages {
         internal static string UI_TXT_Settings {
             get {
                 return ResourceManager.GetString("UI_TXT_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strength.
+        /// </summary>
+        internal static string UI_TXT_Strength {
+            get {
+                return ResourceManager.GetString("UI_TXT_Strength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wisdom.
+        /// </summary>
+        internal static string UI_TXT_Wisdom {
+            get {
+                return ResourceManager.GetString("UI_TXT_Wisdom", resourceCulture);
             }
         }
     }

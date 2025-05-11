@@ -68,12 +68,12 @@ namespace Dungeon_RPG.ViewModel
 
         public Stat Strenght
         {
-            get => Character.Strenght;
+            get => Character.Strength;
             set
             {
-                if (Character.Strenght != value)
+                if (Character.Strength != value)
                 {
-                    Character.Strenght = value;
+                    Character.Strength = value;
                     OnPropertyChanged(nameof(Strenght));
                 }
             }

@@ -23,6 +23,7 @@ namespace Dungeon_RPG.ViewModel
         
         private readonly INavigationService _navigation;
         public RelayCommand GoToMenu { get; }
+        public RelayCommand GoToPlay { get; }
         public CharacterCreatorViewModel(INavigationService navigation, CharacterStore characterStore)
         {
             this.CharacterStore = characterStore;
@@ -37,7 +38,14 @@ namespace Dungeon_RPG.ViewModel
             {
                 CharacterVM.AllStats.Add(new StatViewModel(stat, CharacterVM));
             }
-            GoToMenu = new RelayCommand(_ => _navigation.NavigateTo(new MainMenuViewModel(navigation, characterStore)));
+            GoToMenu = new RelayCommand(_ => GoToMenuAndDeleteChar(_navigation, CharacterStore));
+            GoToPlay = new RelayCommand(_ => _navigation.NavigateTo(new PlayGameViewModel(_navigation, CharacterStore)));
+        }
+        private void GoToMenuAndDeleteChar(INavigationService navigation, CharacterStore characterstore)
+        {
+            _navigation.NavigateTo(new MainMenuViewModel(navigation, characterstore));
+            characterstore.AllCharacters.Remove(characterstore.CurrentCharacter!);
+            characterstore.CurrentCharacter = null;
         }
     }
 }

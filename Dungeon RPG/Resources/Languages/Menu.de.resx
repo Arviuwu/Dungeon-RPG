@@ -132,4 +132,34 @@
   <data name="UI_TXT_Settings" xml:space="preserve">
     <value>Einstellungen</value>
   </data>
+  <data name="UI_TXT_Play" xml:space="preserve">
+    <value>Spielen</value>
+  </data>
+  <data name="UI_TXT_Menu" xml:space="preserve">
+    <value>Menü</value>
+  </data>
+  <data name="UI_TXT_Strength" xml:space="preserve">
+    <value>Stärke</value>
+  </data>
+  <data name="UI_TXT_Dexterity" xml:space="preserve">
+    <value>Geschicklichkeit</value>
+  </data>
+  <data name="UI_TXT_Constitution" xml:space="preserve">
+    <value>Konstitution</value>
+  </data>
+  <data name="UI_TXT_Intelligence" xml:space="preserve">
+    <value>Intelligenz</value>
+  </data>
+  <data name="UI_TXT_Wisdom" xml:space="preserve">
+    <value>Weisheit</value>
+  </data>
+  <data name="UI_TXT_Charisma" xml:space="preserve">
+    <value>Charisma</value>
+  </data>
+  <data name="UI_TXT_PointsRemaining" xml:space="preserve">
+    <value>Verfügbare Punkte</value>
+  </data>
+  <data name="UI_TXT_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
 </root>

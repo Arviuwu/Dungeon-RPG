@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dungeon_RPG.Stores
 {
-    class NavigationStore
+    class Inavigationservice
     {
     }
 }

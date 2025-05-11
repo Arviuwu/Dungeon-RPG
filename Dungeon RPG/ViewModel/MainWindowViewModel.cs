@@ -34,9 +34,6 @@ namespace Dungeon_RPG.ViewModel
             NavigationService = new NavigationService(this);
 
             MainMenuVM = new MainMenuViewModel(NavigationService,CharacterStore);
-            //CharacterCreatorVM = new CharacterCreatorViewModel(NavigationService, CharacterStore);
-            CharacterStatsVM = new CharacterStatsViewModel(NavigationService);
-
             CurrentView = MainMenuVM;
         }
         public void OpenPlay()

@@ -28,15 +28,18 @@
         
         <TextBlock Text="CharacterCreator"/>
         <Button
-            Content="Menu"
+            Content="{Binding Source={StaticResource LocalizationVM}, Path=Menu}"
+            d:Content="Menu"
             Grid.Column="5"
             Command="{Binding GoToMenu}"
             />
         <StackPanel Orientation="Horizontal"
                     Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.ColumnSpan="2">
-            <Label Content="Name"/>
+            <Label Content="{Binding Source={StaticResource LocalizationVM}, Path=Name}" d:Content="Name"/>
             <TextBox Text="{Binding CharacterVM.Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                     Width="100"/>
+                     Width="100"
+                     HorizontalContentAlignment="Left"
+                     VerticalContentAlignment="Center"/>
         </StackPanel>
         <StackPanel 
             Grid.Column="1"
@@ -45,6 +48,10 @@
             Grid.RowSpan="4">
             <view:CharacterStats DataContext="{Binding CharacterVM}"/>
         </StackPanel>
-        
+        <Button Grid.Column="5"
+                Grid.Row="4"
+                Content="{Binding Source={StaticResource LocalizationVM}, Path=Play}"
+                Command="{Binding GoToPlay}"
+                />
     </Grid>
 </UserControl>
