@@ -11,7 +11,6 @@ namespace Dungeon_RPG.View
         public CharacterStats()
         {
             InitializeComponent();
-            DataContext = new CharacterStatsViewModel();
         }
     }
 }

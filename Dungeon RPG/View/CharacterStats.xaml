@@ -39,10 +39,10 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
             <Label Content="Remaining points" HorizontalAlignment="Right"/>
-            <TextBlock Text="{Binding RemainingPoints}"/>
+            <TextBlock Text="{Binding RemainingStatpoints}"/>
         </StackPanel>
         <TextBlock />
-        <ItemsControl Grid.Row="1" ItemsSource="{Binding Character.AllStats}">
+        <ItemsControl Grid.Row="1" ItemsSource="{Binding AllStats}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Grid>

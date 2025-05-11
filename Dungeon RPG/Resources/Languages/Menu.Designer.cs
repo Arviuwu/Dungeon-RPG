@@ -61,6 +61,15 @@ namespace Dungeon_RPG.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create your Character.
+        /// </summary>
+        internal static string UI_TXT_CreateCharacter {
+            get {
+                return ResourceManager.GetString("UI_TXT_CreateCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Items.
         /// </summary>
         internal static string UI_TXT_Items {
@@ -75,15 +84,6 @@ namespace Dungeon_RPG.Resources.Languages {
         internal static string UI_TXT_Language {
             get {
                 return ResourceManager.GetString("UI_TXT_Language", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Play.
-        /// </summary>
-        internal static string UI_TXT_Play {
-            get {
-                return ResourceManager.GetString("UI_TXT_Play", resourceCulture);
             }
         }
         

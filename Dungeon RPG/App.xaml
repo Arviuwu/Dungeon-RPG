@@ -17,6 +17,9 @@
             <DataTemplate DataType="{x:Type vm:CharacterCreatorViewModel}">
                 <view:CharacterCreator/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:CharacterStatsViewModel}">
+                <view:CharacterStats/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

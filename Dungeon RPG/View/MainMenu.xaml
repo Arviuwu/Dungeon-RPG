@@ -26,9 +26,17 @@
         </Grid.ColumnDefinitions>
 
         <Button Name="btnPlayButton"
-                d:Content="Play"
-                Content="{Binding Play}"
-                Command="{Binding GoToPlay}"
+        d:Content="Play"
+        Content="{Binding Play}"
+        Command="{Binding GoToPlay}"
+        Grid.Column="0"
+        Grid.Row="1"
+        Grid.ColumnSpan="2"
+        />
+        <Button Name="btnCreateCharButton"
+                d:Content="Create Character"
+                Content="{Binding CreateCharacter}"
+                Command="{Binding GoToCreateCharacter}"
                 Grid.Column="0"
                 Grid.Row="2"
                 Grid.ColumnSpan="2"
@@ -65,6 +73,8 @@
                 />
         <ComboBox
                 Name="cmboSaveFile"
+            ItemsSource="{Binding CharacterStore.AllCharacters}"
+            DisplayMemberPath="Name"
                 Grid.Column="5"
                 Grid.Row="0"
                 Margin="20"/>

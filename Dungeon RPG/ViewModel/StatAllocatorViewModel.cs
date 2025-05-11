@@ -1,4 +1,5 @@
 ﻿using Dungeon_RPG.Model;
+using Dungeon_RPG.MVVM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace Dungeon_RPG.ViewModel
 {
-    public class StatAllocatorViewModel
+    public class StatAllocatorViewModel : BaseViewModel
     {
-        Stat Stat { get; set; }
-        public StatAllocatorViewModel(Stat stat)
+        
+        public StatAllocatorViewModel()
         {
-            Stat = stat;
         }
     }
 }

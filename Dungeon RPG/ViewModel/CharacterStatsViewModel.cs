@@ -11,20 +11,12 @@ namespace Dungeon_RPG.ViewModel
 {
     public class CharacterStatsViewModel : BaseViewModel
     {
-        public int RemainingPoints { get; set; }
-        private Character character;
+        
+      
 
-        public Character Character
+        public CharacterStatsViewModel(INavigationService navigation)
         {
-            get { return character; }
-            set { character = value; 
-                OnPropertyChanged(); }
-        }
 
-        public CharacterStatsViewModel()
-        {
-            RemainingPoints = 20;
-            Character = new();
         }
     }
 }

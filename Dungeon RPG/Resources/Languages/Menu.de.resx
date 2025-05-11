@@ -123,8 +123,8 @@
   <data name="UI_TXT_Language" xml:space="preserve">
     <value>Sprache</value>
   </data>
-  <data name="UI_TXT_Play" xml:space="preserve">
-    <value>Spielen</value>
+  <data name="UI_TXT_CreateCharacter" xml:space="preserve">
+    <value>Charakter erstellen</value>
   </data>
   <data name="UI_TXT_SaveFile" xml:space="preserve">
     <value>Ausgewählter Speicherstand</value>
