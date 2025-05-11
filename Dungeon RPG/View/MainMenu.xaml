@@ -26,37 +26,54 @@
         </Grid.ColumnDefinitions>
 
         <Button Name="btnPlayButton"
-                d:Content="Play"
-                Content="{Binding Play}"
+        d:Content="Play"
+        Content="{Binding Source={StaticResource LocalizationVM}, Path=Play}"
+        Command="{Binding GoToPlayGame}"
+        Grid.Column="0"
+        Grid.Row="1"
+        Grid.ColumnSpan="2"
+                FontSize="20"
+FontWeight="SemiBold"
+        />
+        <Button Name="btnCreateCharButton"
+                d:Content="Create Character"
+                Content="{Binding Source={StaticResource LocalizationVM}, Path=CreateCharacter}"
+                Command="{Binding GoToCreateCharacter}"
                 Grid.Column="0"
                 Grid.Row="2"
                 Grid.ColumnSpan="2"
+                FontSize="20"
+                FontWeight="SemiBold"
                 />
         <Button Name="btnItemLog"
                 d:Content="Items"
-                Content="{Binding Items}"
+                Content="{Binding Source={StaticResource LocalizationVM}, Path=Items}"
                 Grid.Column="0"
                 Grid.Row="3"
                 Grid.ColumnSpan="2"
+                FontSize="20"
+FontWeight="SemiBold"
                 />
         <Button Name="btnSettings"
                 d:Content="Settings"
-                Content="{Binding Settings}"
+                Content="{Binding Source={StaticResource LocalizationVM}, Path=Settings}"
                 Grid.Column="0"
                 Grid.Row="4"
                 Grid.ColumnSpan="2"
+                FontSize="20"
+FontWeight="SemiBold"
                 />
         <ToggleButton 
                 Name="btnLanguage"
                 d:Content="Language"
-                Content="{Binding Language}"
-                Command="{Binding ToggleLanguageCommand}"
+                Content="{Binding Source={StaticResource LocalizationVM}, Path=Language}"
+                Command="{Binding Source={StaticResource LocalizationVM}, Path=ToggleLanguageCommand}"
                 Grid.Column="5"
                 Grid.Row="1"
                 Margin="20"/>
         <Label  Name="lblSaveFile"
                 d:Content="Selected Save File"
-                Content="{Binding SaveFile}"
+                Content="{Binding Source={StaticResource LocalizationVM}, Path=SaveFile}"
                 Grid.ColumnSpan="2"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Right"
@@ -64,8 +81,12 @@
                 />
         <ComboBox
                 Name="cmboSaveFile"
+            ItemsSource="{Binding CharacterStore.AllCharacters}"
+            DisplayMemberPath="Name"
                 Grid.Column="5"
                 Grid.Row="0"
-                Margin="20"/>
+                Margin="20"
+                HorizontalContentAlignment="Left"
+            VerticalContentAlignment="Center"/>
     </Grid>
 </UserControl>

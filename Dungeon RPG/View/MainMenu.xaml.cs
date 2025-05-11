@@ -8,8 +8,7 @@ namespace Dungeon_RPG.View
         public MainMenu()
         {
             InitializeComponent();
-            var vm = new MainMenuViewModel();
-            DataContext = vm;
+            
         }
     }
 }

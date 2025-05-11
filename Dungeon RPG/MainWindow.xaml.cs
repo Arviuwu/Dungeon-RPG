@@ -1,4 +1,4 @@
-﻿using Dungeon_RPG.View;
+﻿using Dungeon_RPG.ViewModel;
 using System.Windows;
 namespace Dungeon_RPG
 {
@@ -7,7 +7,8 @@ namespace Dungeon_RPG
         public MainWindow()
         {
             InitializeComponent();
-            MainContent.Content = new MainMenu();
+            DataContext= new MainWindowViewModel();
+            
         }
     }
 }

@@ -123,13 +123,43 @@
   <data name="UI_TXT_Language" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="UI_TXT_Play" xml:space="preserve">
-    <value>Play</value>
+  <data name="UI_TXT_CreateCharacter" xml:space="preserve">
+    <value>Create your Character</value>
   </data>
   <data name="UI_TXT_SaveFile" xml:space="preserve">
     <value>Selected Save File</value>
   </data>
   <data name="UI_TXT_Settings" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="UI_TXT_Play" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="UI_TXT_Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="UI_TXT_Strength" xml:space="preserve">
+    <value>Strength</value>
+  </data>
+  <data name="UI_TXT_Dexterity" xml:space="preserve">
+    <value>Dexterity</value>
+  </data>
+  <data name="UI_TXT_Constitution" xml:space="preserve">
+    <value>Constitution</value>
+  </data>
+  <data name="UI_TXT_Intelligence" xml:space="preserve">
+    <value>Intelligence</value>
+  </data>
+  <data name="UI_TXT_Wisdom" xml:space="preserve">
+    <value>Wisdom</value>
+  </data>
+  <data name="UI_TXT_Charisma" xml:space="preserve">
+    <value>Charisma</value>
+  </data>
+  <data name="UI_TXT_PointsRemaining" xml:space="preserve">
+    <value>Points remaining</value>
+  </data>
+  <data name="UI_TXT_Name" xml:space="preserve">
+    <value>Name</value>
   </data>
 </root>
