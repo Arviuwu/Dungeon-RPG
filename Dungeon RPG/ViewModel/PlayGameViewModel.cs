@@ -11,11 +11,11 @@ namespace Dungeon_RPG.ViewModel
     public class PlayGameViewModel
     {
         private readonly INavigationService _navigation;
-        public CharacterStore Characterstore { get; set; }
+        public CharacterStore CharacterStore { get; set; }
         public PlayGameViewModel( INavigationService navigation, CharacterStore characterStore)
         {
             _navigation = navigation;
-            Characterstore = characterStore;
+            CharacterStore = characterStore;
         }
     }
 }

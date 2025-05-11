@@ -8,6 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Background="White">
     <Grid>
-        <TextBlock Text="PlayGame"/>
+        
+        <TextBlock Text="{Binding CharacterStore.CurrentCharacter.Name}"/>
     </Grid>
 </UserControl>
