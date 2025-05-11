@@ -1,4 +1,5 @@
-﻿using Dungeon_RPG.Services;
+﻿using Dungeon_RPG.Model;
+using Dungeon_RPG.Services;
 using Dungeon_RPG.Stores;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,16 @@ namespace Dungeon_RPG.ViewModel
     {
         private readonly INavigationService _navigation;
         public CharacterStore CharacterStore { get; set; }
+        public CharacterViewModel CharacterVM { get; }
         public PlayGameViewModel( INavigationService navigation, CharacterStore characterStore)
         {
             _navigation = navigation;
             CharacterStore = characterStore;
+            CharacterVM = new(CharacterStore.CurrentCharacter);
+            foreach (Stat stat in CharacterStore.CurrentCharacter.AllStats)
+            {
+                CharacterVM.AllStats.Add(new StatViewModel(stat, CharacterVM));
+            }
         }
     }
 }
