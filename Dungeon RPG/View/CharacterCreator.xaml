@@ -25,7 +25,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="3" ItemsSource="{Binding CharacterStore.AllCharacters, UpdateSourceTrigger=PropertyChanged}"/>
+        
         <TextBlock Text="CharacterCreator"/>
         <Button
             Content="Menu"
