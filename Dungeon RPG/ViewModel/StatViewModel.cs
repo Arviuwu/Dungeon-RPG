@@ -22,19 +22,7 @@ namespace Dungeon_RPG.ViewModel
                 }
             }
         }
-        public Character LinkedChar
-        {
-            get { return Stat.LinkedChar; }
-            set
-            {
-                if (Stat.LinkedChar != value)
-                {
-                    Stat.LinkedChar = value;
-                    OnPropertyChanged();
-                }
-
-            }
-        }
+       
         public string Name
         {
             get { return Stat.Name; }
@@ -59,13 +47,12 @@ namespace Dungeon_RPG.ViewModel
         public RelayCommand DecrementCommand { get; set; }
         private void IncPoints()
         {
-            if (LinkedChar.RemainingStatpoints > 0)
-            {
+            
                 Points++;
                 CharacterVM.RemainingStatpoints--;
                 IncrementCommand.RaiseCanExecuteChanged();
                 DecrementCommand.RaiseCanExecuteChanged();
-            }
+            
         }
         private void DecPoints()
         {

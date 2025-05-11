@@ -1,11 +1,11 @@
-﻿using Dungeon_RPG.Model;
-using Dungeon_RPG.MVVM;
+﻿using Dungeon_RPG.MVVM;
 using Dungeon_RPG.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dungeon_RPG.Services;
 
 namespace Dungeon_RPG.ViewModel
 {
@@ -27,9 +27,9 @@ namespace Dungeon_RPG.ViewModel
         public CharacterStatsViewModel CharacterStatsVM { get; }
         public INavigationService NavigationService { get; }
         public CharacterStore CharacterStore { get; set; }
-        public MainWindowViewModel()
+        public MainWindowViewModel(CharacterStore CharacterStore)
         {
-            CharacterStore = new();
+            
 
             NavigationService = new NavigationService(this);
 

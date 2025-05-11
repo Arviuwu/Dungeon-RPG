@@ -1,5 +1,5 @@
-﻿using Dungeon_RPG.Model;
-using Dungeon_RPG.MVVM;
+﻿using Dungeon_RPG.MVVM;
+using Dungeon_RPG.Services;
 using Dungeon_RPG.Stores;
 using System.Windows;
 namespace Dungeon_RPG.ViewModel

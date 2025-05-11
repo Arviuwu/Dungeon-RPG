@@ -1,6 +1,7 @@
 ﻿using Dungeon_RPG.MVVM;
 using Dungeon_RPG.Model;
 using Dungeon_RPG.Stores;
+using Dungeon_RPG.Services;
 
 namespace Dungeon_RPG.ViewModel
 {

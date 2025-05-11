@@ -24,7 +24,7 @@ namespace Dungeon_RPG.Model
         
         public ObservableCollection<Stat> AllStats { get; set; } = new();
 
-	
+
 
         // public Weapon Selected weapon
         //Armor props
@@ -33,21 +33,44 @@ namespace Dungeon_RPG.Model
 
         public Character()
         {
-            BaseHealth = new("Base Health", 100, this);
-            BaseMana = new("Base Mana", 100, this);
+            Name = "Who are you?";
             Money = 0;
             RemainingStatpoints = 5;
-            BaseHealth = new("Base Health", 100, this);
-            Name = "Who are you?";
-            AllStats.Add(Strength = new Stat("Strength", 8, this));
-            AllStats.Add(Dexterity = new Stat("Dexterity", 8, this));
-            AllStats.Add(Constitution = new Stat("Constitution", 8, this));
-            AllStats.Add(Intelligence = new Stat("Intelligence", 8, this));
-            AllStats.Add(Wisdom = new Stat("Wisdom", 8, this));
-            AllStats.Add(Charisma = new Stat("Charisma", 8, this));
 
+            Strength = new Stat("Strength", 8);
+            Dexterity = new Stat("Dexterity", 8);
+            Constitution = new Stat("Constitution", 8);
+            Intelligence = new Stat("Intelligence", 8);
+            Wisdom = new Stat("Wisdom", 8);
+            Charisma = new Stat("Charisma", 8);
 
+            HookStat(Strength);
+            HookStat(Dexterity);
+            HookStat(Constitution);
+            HookStat(Intelligence);
+            HookStat(Wisdom);
+            HookStat(Charisma);
+
+            AllStats = new ObservableCollection<Stat>
+    {
+        Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma
+    };
         }
-        
+
+        private void HookStat(Stat stat)
+        {
+            stat.OnStatIncreased = () =>
+            {
+                if (RemainingStatpoints > 0)
+                    RemainingStatpoints--;
+            };
+
+            stat.OnStatDecreased = () =>
+            {
+                RemainingStatpoints++;
+            };
+        }
+
+
     }
 }
