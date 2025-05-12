@@ -26,8 +26,14 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock Text="{Binding CharacterStore.CurrentCharacter.Name}"/>
-        <Button Content="Character" Grid.Row="2" Grid.ColumnSpan="2"/>
-        <Button Content="Items" Grid.Row="3" Grid.ColumnSpan="2"/>
-        <Button Content="Abilities" Grid.Row="4" Grid.ColumnSpan="2"/>
+        <Button Content="Character" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource MenuButton}"/>
+        <Button Content="Items" Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource MenuButton}"/>
+        <Button Content="Abilities" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource MenuButton}"/>
+        <view:CharacterDisplay 
+            DataContext="{Binding CharacterVM}"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Grid.Row="1"
+            Grid.RowSpan="4"/>
     </Grid>
 </UserControl>

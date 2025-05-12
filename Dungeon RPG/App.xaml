@@ -26,6 +26,9 @@
             <DataTemplate DataType="{x:Type vm:PlayGameViewModel}">
                 <view:PlayGame/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:CharacterDisplayViewModel}">
+                <view:CharacterDisplay/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
