@@ -44,33 +44,11 @@ namespace Dungeon_RPG.Model
             Wisdom = new Stat("Wisdom", 8);
             Charisma = new Stat("Charisma", 8);
 
-            HookStat(Strength);
-            HookStat(Dexterity);
-            HookStat(Constitution);
-            HookStat(Intelligence);
-            HookStat(Wisdom);
-            HookStat(Charisma);
 
             AllStats = new ObservableCollection<Stat>
-    {
-        Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma
-    };
-        }
-
-        private void HookStat(Stat stat)
-        {
-            stat.OnStatIncreased = () =>
             {
-                if (RemainingStatpoints > 0)
-                    RemainingStatpoints--;
-            };
-
-            stat.OnStatDecreased = () =>
-            {
-                RemainingStatpoints++;
+                Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma
             };
         }
-
-
     }
 }

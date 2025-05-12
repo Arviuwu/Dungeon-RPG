@@ -41,7 +41,7 @@ namespace Dungeon_RPG.Services
                     
                     if (allCharacters != null)
                     {
-                        HookStatCallbacks(allCharacters);
+                        HookStatCallbacks(ref allCharacters);
                         charStore.AllCharacters = allCharacters;
                         Debug.WriteLine("Data loaded from file.");
                     }
@@ -91,11 +91,10 @@ namespace Dungeon_RPG.Services
             }
             
         }
-        void HookStatCallbacks(List<Character> AllCharacters)
+        void HookStatCallbacks(ref List<Character> AllCharacters)
         {
             foreach (var character in AllCharacters)
             {
-
                 foreach (var stat in character.AllStats)
                 {
                     stat.OnStatIncreased = () =>

@@ -52,7 +52,6 @@ namespace Dungeon_RPG.ViewModel
                 CharacterVM.RemainingStatpoints--;
                 IncrementCommand.RaiseCanExecuteChanged();
                 DecrementCommand.RaiseCanExecuteChanged();
-            
         }
         private void DecPoints()
         {
