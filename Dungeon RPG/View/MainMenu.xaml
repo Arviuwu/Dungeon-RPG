@@ -85,5 +85,7 @@
                 Margin="20"
                 HorizontalContentAlignment="Left"
             VerticalContentAlignment="Center"/>
+        <ProgressBar Grid.Row="3"
+                     Grid.Column="3"/>
     </Grid>
 </UserControl>

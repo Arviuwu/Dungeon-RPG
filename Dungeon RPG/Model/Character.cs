@@ -8,8 +8,8 @@ namespace Dungeon_RPG.Model
     public class Character :BaseViewModel
     {
         public string  Name { get; set; }
-        public Stat BaseHealth { get; set; } 
-        public Stat Health { get; set; }
+        public Stat CurrentHealth { get; set; } 
+        public Stat MaxHealth { get; set; }
         public Stat BaseMana { get; set; }
         public Stat Strength { get; set; }
         public Stat Dexterity { get; set; }

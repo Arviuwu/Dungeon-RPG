@@ -27,28 +27,28 @@ namespace Dungeon_RPG.ViewModel
             }
         }
 
-        public Stat BaseHealth
+        public Stat MaxHealth
         {
-            get => Character.BaseHealth;
+            get => Character.MaxHealth;
             set
             {
-                if (Character.BaseHealth != value)
+                if (Character.MaxHealth != value)
                 {
-                    Character.BaseHealth = value;
-                    OnPropertyChanged(nameof(BaseHealth));
+                    Character.MaxHealth = value;
+                    OnPropertyChanged(nameof(MaxHealth));
                 }
             }
         }
 
-        public Stat Health
+        public Stat CurrentHealth
         {
-            get => Character.Health;
+            get => Character.CurrentHealth;
             set
             {
-                if (Character.Health != value)
+                if (Character.CurrentHealth != value)
                 {
-                    Character.Health = value;
-                    OnPropertyChanged(nameof(Health));
+                    Character.CurrentHealth = value;
+                    OnPropertyChanged(nameof(CurrentHealth));
                 }
             }
         }
