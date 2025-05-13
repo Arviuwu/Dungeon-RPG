@@ -11,10 +11,170 @@
 
   <ItemGroup>
     <None Remove="Data\Save.json" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_01.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_02.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_03.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_04.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_05.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_06.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_07.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_08.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_09.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_10.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_11.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_12.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_13.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_14.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_15.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_16.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_17.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_18.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_19.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_20.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_21.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_22.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_23.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_24.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_25.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_26.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_27.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_28.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_29.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_30.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_31.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_32.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_33.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_34.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_35.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_36.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_37.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_38.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_39.png" />
+    <None Remove="Resources\Sprites\Swords\Iicon_32_40.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Data\Save.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_01.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_02.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_03.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_04.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_05.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_06.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_07.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_08.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_09.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_10.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_11.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_12.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_13.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_14.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_15.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_16.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_17.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_18.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_19.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_20.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_21.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_22.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_23.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_24.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_25.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_26.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_27.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_28.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_30.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_31.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_32.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_33.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_34.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_35.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_36.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_37.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_38.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_39.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Swords\Iicon_32_40.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

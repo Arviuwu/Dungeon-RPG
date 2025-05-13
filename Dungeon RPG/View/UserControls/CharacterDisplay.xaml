@@ -32,6 +32,6 @@
             <ctrl:Healthbar/>
             <ctrl:Manabar/>
         </StackPanel>
-        
+        <ctrl:WeaponDisplay DataContext="{Binding HeldWeapon}"/>
     </Grid>
 </UserControl>

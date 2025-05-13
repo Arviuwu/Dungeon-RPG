@@ -26,7 +26,18 @@ namespace Dungeon_RPG.ViewModel
                 }
             }
         }
-
+        public Weapon HeldWeapon
+        {
+            get => Character.HeldWeapon;
+            set
+            {
+                if (Character.HeldWeapon != value)
+                {
+                    Character.HeldWeapon = value;
+                    OnPropertyChanged(nameof(HeldWeapon));
+                }
+            }
+        }
         public Stat MaxHealth
         {
             get => Character.MaxHealth;
