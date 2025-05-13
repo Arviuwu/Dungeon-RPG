@@ -1,6 +1,7 @@
 using Dungeon_RPG.MVVM;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Runtime.CompilerServices;
 
 namespace Dungeon_RPG.Model
@@ -8,6 +9,7 @@ namespace Dungeon_RPG.Model
     public class Character :BaseViewModel
     {
         public string Name { get; set; }
+        public Weapon HeldWeapon { get; set; }
         public Stat CurrentHealth { get; set; } 
         public Stat MaxHealth { get; set; }
         public Stat CurrentMana { get; set; }
@@ -52,6 +54,7 @@ namespace Dungeon_RPG.Model
             {
                 Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma
             };
+            HeldWeapon = new("Sword", 3, Path.Combine(AppContext.BaseDirectory, "Resources\\Sprites\\Swords\\Iicon_32_01.png"));
         }
     }
 }
