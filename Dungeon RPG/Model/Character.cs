@@ -7,10 +7,11 @@ namespace Dungeon_RPG.Model
 {
     public class Character :BaseViewModel
     {
-        public string  Name { get; set; }
+        public string Name { get; set; }
         public Stat CurrentHealth { get; set; } 
         public Stat MaxHealth { get; set; }
-        public Stat BaseMana { get; set; }
+        public Stat CurrentMana { get; set; }
+        public Stat MaxMana { get; set; }
         public Stat Strength { get; set; }
         public Stat Dexterity { get; set; }
         public Stat Constitution { get; set; }
@@ -43,8 +44,10 @@ namespace Dungeon_RPG.Model
             Intelligence = new Stat("Intelligence", 8);
             Wisdom = new Stat("Wisdom", 8);
             Charisma = new Stat("Charisma", 8);
-
-
+            CurrentHealth = new Stat("Health", 25);
+            MaxHealth = new Stat("Current Health", 100);
+            MaxMana = new Stat("Max Mana", 100);
+            CurrentMana = new Stat("Mana", 75);
             AllStats = new ObservableCollection<Stat>
             {
                 Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma

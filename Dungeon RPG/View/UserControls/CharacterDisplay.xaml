@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Dungeon_RPG.View"
+             xmlns:ctrl="clr-namespace:Dungeon_RPG.View.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -12,7 +13,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Image Source="{Binding Image}" Grid.Column="1"/>
+        
         <ItemsControl Grid.Column="2" ItemsSource="{Binding AllStats}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
@@ -27,5 +28,10 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        <StackPanel Grid.Column="1" >
+            <ctrl:Healthbar/>
+            <ctrl:Manabar/>
+        </StackPanel>
+        
     </Grid>
 </UserControl>

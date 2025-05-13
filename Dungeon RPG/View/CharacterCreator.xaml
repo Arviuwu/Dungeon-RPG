@@ -7,8 +7,12 @@
              xmlns:view="clr-namespace:Dungeon_RPG.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Background="White">
+             Background="White"
+             SizeChanged="UserControl_SizeChanged">
     <Grid>
+        <Grid.LayoutTransform >
+            <ScaleTransform x:Name="MainScale"/>
+        </Grid.LayoutTransform>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>

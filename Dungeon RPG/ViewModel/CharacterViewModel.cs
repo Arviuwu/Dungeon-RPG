@@ -52,16 +52,27 @@ namespace Dungeon_RPG.ViewModel
                 }
             }
         }
-
-        public Stat BaseMana
+        public Stat MaxMana
         {
-            get => Character.BaseMana;
+            get => Character.MaxMana;
             set
             {
-                if (Character.BaseMana != value)
+                if (Character.MaxMana != value)
                 {
-                    Character.BaseMana = value;
-                    OnPropertyChanged(nameof(BaseMana));
+                    Character.MaxMana = value;
+                    OnPropertyChanged(nameof(MaxMana));
+                }
+            }
+        }
+        public Stat CurrentMana
+        {
+            get => Character.CurrentMana;
+            set
+            {
+                if (Character.CurrentMana != value)
+                {
+                    Character.CurrentMana = value;
+                    OnPropertyChanged(nameof(CurrentMana));
                 }
             }
         }
