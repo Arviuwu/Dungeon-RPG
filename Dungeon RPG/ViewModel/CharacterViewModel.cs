@@ -12,6 +12,18 @@ namespace Dungeon_RPG.ViewModel
         public CharacterViewModel(Character character)
         {
             Character = character;
+
+           
+            CurrentHealthVM = new StatViewModel(Character.CurrentHealth, this);
+            MaxHealthVM = new StatViewModel(Character.MaxHealth, this);
+            MaxManaVM = new StatViewModel(Character.MaxMana, this);
+            CurrentManaVM = new StatViewModel(Character.CurrentMana, this);
+            StrengthVM = new StatViewModel(Character.Strength, this);
+            DexterityVM = new StatViewModel(Character.Dexterity, this);
+            ConstitutionVM = new StatViewModel(Character.Constitution, this);
+            IntelligenceVM = new StatViewModel(Character.Intelligence, this);
+            WisdomVM = new StatViewModel(Character.Wisdom, this);
+            CharismaVM = new StatViewModel(Character.Charisma, this);
         }
 
         public string Name
@@ -26,6 +38,20 @@ namespace Dungeon_RPG.ViewModel
                 }
             }
         }
+
+        public string SpritePath
+        {
+            get => Character.SpritePath;
+            set
+            {
+                if (Character.SpritePath != value)
+                {
+                    Character.SpritePath = value;
+                    OnPropertyChanged(nameof(SpritePath));
+                }
+            }
+        }
+
         public Weapon HeldWeapon
         {
             get => Character.HeldWeapon;
@@ -38,133 +64,18 @@ namespace Dungeon_RPG.ViewModel
                 }
             }
         }
-        public Stat MaxHealth
-        {
-            get => Character.MaxHealth;
-            set
-            {
-                if (Character.MaxHealth != value)
-                {
-                    Character.MaxHealth = value;
-                    OnPropertyChanged(nameof(MaxHealth));
-                }
-            }
-        }
 
-        public Stat CurrentHealth
-        {
-            get => Character.CurrentHealth;
-            set
-            {
-                if (Character.CurrentHealth != value)
-                {
-                    Character.CurrentHealth = value;
-                    OnPropertyChanged(nameof(CurrentHealth));
-                }
-            }
-        }
-        public Stat MaxMana
-        {
-            get => Character.MaxMana;
-            set
-            {
-                if (Character.MaxMana != value)
-                {
-                    Character.MaxMana = value;
-                    OnPropertyChanged(nameof(MaxMana));
-                }
-            }
-        }
-        public Stat CurrentMana
-        {
-            get => Character.CurrentMana;
-            set
-            {
-                if (Character.CurrentMana != value)
-                {
-                    Character.CurrentMana = value;
-                    OnPropertyChanged(nameof(CurrentMana));
-                }
-            }
-        }
-
-        public Stat Strenght
-        {
-            get => Character.Strength;
-            set
-            {
-                if (Character.Strength != value)
-                {
-                    Character.Strength = value;
-                    OnPropertyChanged(nameof(Strenght));
-                }
-            }
-        }
-
-        public Stat Dexterity
-        {
-            get => Character.Dexterity;
-            set
-            {
-                if (Character.Dexterity != value)
-                {
-                    Character.Dexterity = value;
-                    OnPropertyChanged(nameof(Dexterity));
-                }
-            }
-        }
-
-        public Stat Constitution
-        {
-            get => Character.Constitution;
-            set
-            {
-                if (Character.Constitution != value)
-                {
-                    Character.Constitution = value;
-                    OnPropertyChanged(nameof(Constitution));
-                }
-            }
-        }
-
-        public Stat Intelligence
-        {
-            get => Character.Intelligence;
-            set
-            {
-                if (Character.Intelligence != value)
-                {
-                    Character.Intelligence = value;
-                    OnPropertyChanged(nameof(Intelligence));
-                }
-            }
-        }
-
-        public Stat Wisdom
-        {
-            get => Character.Wisdom;
-            set
-            {
-                if (Character.Wisdom != value)
-                {
-                    Character.Wisdom = value;
-                    OnPropertyChanged(nameof(Wisdom));
-                }
-            }
-        }
-
-        public Stat Charisma
-        {
-            get => Character.Charisma;
-            set
-            {
-                if (Character.Charisma != value)
-                {
-                    Character.Charisma = value;
-                    OnPropertyChanged(nameof(Charisma));
-                }
-            }
-        }
+       
+        public StatViewModel CurrentHealthVM { get; set; }
+        public StatViewModel MaxHealthVM { get; set; }
+        public StatViewModel MaxManaVM { get; set; }
+        public StatViewModel CurrentManaVM { get; set; }
+        public StatViewModel StrengthVM { get; set; }
+        public StatViewModel DexterityVM { get; set; }
+        public StatViewModel ConstitutionVM { get; set; }
+        public StatViewModel IntelligenceVM { get; set; }
+        public StatViewModel WisdomVM { get; set; }
+        public StatViewModel CharismaVM { get; set; }
 
         public decimal Money
         {
@@ -178,6 +89,7 @@ namespace Dungeon_RPG.ViewModel
                 }
             }
         }
+
         public int RemainingStatpoints
         {
             get => Character.RemainingStatpoints;
@@ -190,7 +102,13 @@ namespace Dungeon_RPG.ViewModel
                 }
             }
         }
-        
         public ObservableCollection<StatViewModel> AllStats { get; set; } = new();
+
+        public void Attack(EnemyViewModel enemyVM)
+        {
+            var damage = HeldWeapon.Damage;
+            enemyVM.TakeDamage(damage);
+        }
     }
+
 }

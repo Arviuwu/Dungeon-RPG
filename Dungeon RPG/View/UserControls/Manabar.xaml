@@ -8,20 +8,17 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <ProgressBar 
-    Minimum="0" 
-    Maximum="{Binding MaxMana.Points}" 
-    Value="{Binding CurrentMana.Points}"
-    MinHeight="20"
-    Foreground="LightSkyBlue"
-            Margin="3"
-            
+            Minimum="0" 
+            Maximum="{Binding MaxManaVM.Points}" 
+            Value="{Binding CurrentManaVM.Points}"
+            MinHeight="20"
+            Foreground="LightSkyBlue"
             />
         <TextBlock 
-    Text="{Binding CurrentMana.Points}"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"
-    TextAlignment="Left"
-    Margin="5 2 2 2"
-    />
+            Text="{Binding CurrentManaVM.Points}"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            TextAlignment="Left"
+            Margin="5 2 2 2"/>
     </Grid>
 </UserControl>

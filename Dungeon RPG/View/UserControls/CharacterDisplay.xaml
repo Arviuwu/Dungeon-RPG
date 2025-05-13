@@ -9,29 +9,49 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         
-        <ItemsControl Grid.Column="2" ItemsSource="{Binding AllStats}">
+        <Border VerticalAlignment="Top" Grid.Column="2" BorderBrush="Black" BorderThickness="2" CornerRadius="10">
+        <ItemsControl  ItemsSource="{Binding AllStats}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding Points}"/>
-                        <TextBlock Text="{Binding Name}" Grid.Column="1"/>
+                        <TextBlock Text="{Binding Points}"
+                                   Margin="3"
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding Name}" Grid.Column="1"
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
                     </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        </Border>
+        
         <StackPanel Grid.Column="1" >
+            <TextBlock Text="{Binding Name}"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       HorizontalAlignment="Center"/>
+            <Image Source="{Binding SpritePath}" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
             <ctrl:Healthbar/>
             <ctrl:Manabar/>
         </StackPanel>
-        <ctrl:WeaponDisplay DataContext="{Binding HeldWeapon}"/>
-    </Grid>
+        
+        <StackPanel>
+            <TextBlock Text="Equipped Weapon" HorizontalAlignment="Center" Margin="5"/>
+            <ctrl:WeaponDisplay Width="70" DataContext="{Binding HeldWeapon}"/>
+    
+    </StackPanel>
+     </Grid>   
 </UserControl>

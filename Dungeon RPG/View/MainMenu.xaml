@@ -36,6 +36,7 @@
         Grid.Column="0"
         Grid.Row="1"
         Grid.ColumnSpan="2"
+        
                 Style="{StaticResource MenuButton}"
         />
         <Button Name="MenuButton"

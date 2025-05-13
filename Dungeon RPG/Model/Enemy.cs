@@ -1,19 +1,20 @@
-using Dungeon_RPG.MVVM;
-using Dungeon_RPG.ViewModel;
-
+﻿using Dungeon_RPG.MVVM;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.IO;
-using System.Runtime.CompilerServices;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Dungeon_RPG.Model
 {
-    public class Character :BaseViewModel
+    public class Enemy
     {
         public string Name { get; set; }
         public string SpritePath { get; set; }
         public Weapon HeldWeapon { get; set; }
-        public Stat CurrentHealth { get; set; } 
+        public Stat CurrentHealth { get; set; }
         public Stat MaxHealth { get; set; }
         public Stat CurrentMana { get; set; }
         public Stat MaxMana { get; set; }
@@ -24,10 +25,10 @@ namespace Dungeon_RPG.Model
         public Stat Wisdom { get; set; }
         public Stat Charisma { get; set; }
         public decimal Money { get; set; }
-        
+
         public int RemainingStatpoints { get; set; }
-        
-        
+
+
         public ObservableCollection<Stat> AllStats { get; set; } = new();
 
 
@@ -37,9 +38,9 @@ namespace Dungeon_RPG.Model
         //inventory props
         //stache
 
-        public Character()
+        public Enemy()
         {
-            Name = "Who are you?";
+            Name = "Slime";
             Money = 0;
             RemainingStatpoints = 5;
 
@@ -49,17 +50,22 @@ namespace Dungeon_RPG.Model
             Intelligence = new Stat("Intelligence", 8);
             Wisdom = new Stat("Wisdom", 8);
             Charisma = new Stat("Charisma", 8);
-            CurrentHealth = new Stat("Health", 25);
-            MaxHealth = new Stat("Current Health", 100);
+            CurrentHealth = new Stat("Health", 100);
+            MaxHealth = new Stat("Max Health", 100);
             MaxMana = new Stat("Max Mana", 100);
-            CurrentMana = new Stat("Mana", 75);
+            CurrentMana = new Stat("Mana", 100);
             AllStats = new ObservableCollection<Stat>
-            {
-                Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma
-            };
+        {
+            Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma
+        };
             HeldWeapon = new("Sword", 3, Path.Combine(AppContext.BaseDirectory, "Resources\\Sprites\\Swords\\Iicon_32_01.png"));
-            SpritePath = Path.Combine(AppContext.BaseDirectory, "Resources\\Sprites\\Characters\\Knight.png");
+            SpritePath = Path.Combine(AppContext.BaseDirectory, "Resources\\Sprites\\Characters\\Slime.png");
         }
-        
+        public void Attack()
+        {
+
+        }
+        }
     }
-}
+
+

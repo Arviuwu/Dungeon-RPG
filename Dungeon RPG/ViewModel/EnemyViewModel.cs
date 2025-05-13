@@ -1,0 +1,135 @@
+﻿using Dungeon_RPG.Model;
+using Dungeon_RPG.MVVM;
+using Dungeon_RPG.ViewModel;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+    namespace Dungeon_RPG.ViewModel
+    {
+        public class EnemyViewModel : BaseViewModel
+        {
+            public readonly Enemy Enemy;
+
+            public EnemyViewModel(Enemy enemy)
+            {
+                Enemy = enemy;
+
+                MaxHealthVM = new(enemy.MaxHealth, this);
+                CurrentHealthVM = new(enemy.CurrentHealth, this);
+                MaxManaVM = new(enemy.MaxMana, this);
+                CurrentManaVM = new(enemy.CurrentMana, this);
+                StrengthVM = new(enemy.Strength, this);
+                DexterityVM = new(enemy.Dexterity, this);
+                ConstitutionVM = new(enemy.Constitution, this);
+                IntelligenceVM = new(enemy.Intelligence, this);
+                WisdomVM = new(enemy.Wisdom, this);
+                CharismaVM = new(enemy.Charisma, this);
+
+                AllStats = new ObservableCollection<StatViewModel>
+            {
+                MaxHealthVM,
+                CurrentHealthVM,
+                MaxManaVM,
+                CurrentManaVM,
+                StrengthVM,
+                DexterityVM,
+                ConstitutionVM,
+                IntelligenceVM,
+                WisdomVM,
+                CharismaVM
+            };
+            }
+
+            public string Name
+            {
+                get => Enemy.Name;
+                set
+                {
+                    if (Enemy.Name != value)
+                    {
+                        Enemy.Name = value;
+                        OnPropertyChanged();
+                    }
+                }
+            }
+
+            public string SpritePath
+            {
+                get => Enemy.SpritePath;
+                set
+                {
+                    if (Enemy.SpritePath != value)
+                    {
+                        Enemy.SpritePath = value;
+                        OnPropertyChanged();
+                    }
+                }
+            }
+
+            public Weapon HeldWeapon
+            {
+                get => Enemy.HeldWeapon;
+                set
+                {
+                    if (Enemy.HeldWeapon != value)
+                    {
+                        Enemy.HeldWeapon = value;
+                        OnPropertyChanged();
+                    }
+                }
+            }
+
+            public decimal Money
+            {
+                get => Enemy.Money;
+                set
+                {
+                    if (Enemy.Money != value)
+                    {
+                        Enemy.Money = value;
+                        OnPropertyChanged();
+                    }
+                }
+            }
+
+            public int RemainingStatpoints
+            {
+                get => Enemy.RemainingStatpoints;
+                set
+                {
+                    if (Enemy.RemainingStatpoints != value)
+                    {
+                        Enemy.RemainingStatpoints = value;
+                        OnPropertyChanged();
+                    }
+                }
+            }
+
+            // Wrapped stats
+            public StatViewModel MaxHealthVM { get; }
+            public StatViewModel CurrentHealthVM { get; }
+            public StatViewModel MaxManaVM { get; }
+            public StatViewModel CurrentManaVM { get; }
+            public StatViewModel StrengthVM { get; }
+            public StatViewModel DexterityVM { get; }
+            public StatViewModel ConstitutionVM { get; }
+            public StatViewModel IntelligenceVM { get; }
+            public StatViewModel WisdomVM { get; }
+            public StatViewModel CharismaVM { get; }
+
+            public ObservableCollection<StatViewModel> AllStats { get; }
+            public object CurrentHealth { get; internal set; }
+            public void TakeDamage(int damage)
+        {
+            CurrentHealthVM.Points -= damage;
+        }
+        }
+    }
+
+
+

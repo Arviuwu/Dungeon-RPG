@@ -9,13 +9,13 @@
     <Grid>
         <ProgressBar 
             Minimum="0" 
-            Maximum="{Binding MaxHealth.Points}" 
-            Value="{Binding CurrentHealth.Points}"
+            Maximum="{Binding MaxHealthVM.Points}" 
+            Value="{Binding CurrentHealthVM.Points}"
             Margin="3"
             MinHeight="20"
             Foreground="ForestGreen"/>
         <TextBlock 
-            Text="{Binding CurrentHealth.Points}"
+            Text="{Binding CurrentHealthVM.Points}"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             TextAlignment="Left"

@@ -11,6 +11,8 @@
 
   <ItemGroup>
     <None Remove="Data\Save.json" />
+    <None Remove="Resources\Sprites\Characters\Knight.png" />
+    <None Remove="Resources\Sprites\Characters\Slime.png" />
     <None Remove="Resources\Sprites\Swords\Iicon_32_01.png" />
     <None Remove="Resources\Sprites\Swords\Iicon_32_02.png" />
     <None Remove="Resources\Sprites\Swords\Iicon_32_03.png" />
@@ -55,6 +57,12 @@
 
   <ItemGroup>
     <Content Include="Data\Save.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Characters\Knight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sprites\Characters\Slime.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Sprites\Swords\Iicon_32_01.png">

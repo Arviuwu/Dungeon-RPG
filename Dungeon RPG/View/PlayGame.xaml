@@ -29,18 +29,24 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock Text="{Binding CharacterVM.Name}"/>
-        <Button Content="Character" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource MenuButton}"/>
-        <Button Content="Items" Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource MenuButton}"/>
-        <Button Content="Abilities" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource MenuButton}"/>
+        <Button Content="Character" Grid.Row="2" Grid.ColumnSpan="1" Style="{StaticResource MenuButton}"/>
+        <Button Content="Items" Grid.Row="3" Grid.ColumnSpan="1" Style="{StaticResource MenuButton}"/>
+        <Button Content="Abilities" Grid.Row="4" Grid.ColumnSpan="1" Style="{StaticResource MenuButton}"/>
         <view:CharacterDisplay 
             DataContext="{Binding CharacterVM}"
             Grid.Column="2"
-            Grid.ColumnSpan="2"
+            Grid.ColumnSpan="3"
             Grid.Row="1"
             Grid.RowSpan="4"/>
-        
+        <Button
+            Content="Play"
+            Command="{Binding GoToPlay}"
+            Style="{StaticResource MenuButton}"
+            Grid.Column="6"
+            Grid.Row="3"/>
     </Grid>
     
 </UserControl>
