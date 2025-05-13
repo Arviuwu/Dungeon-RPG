@@ -9,6 +9,7 @@ namespace Dungeon_RPG.ViewModel
         public Stat Stat { get; set; }
 
         public CharacterViewModel CharacterVM { get; set; }
+        public EnemyViewModel EnemyVM { get; set; }
 
         public int Points
         {
@@ -43,6 +44,13 @@ namespace Dungeon_RPG.ViewModel
             IncrementCommand = new RelayCommand(_ => IncPoints(),_ => CharacterVM.RemainingStatpoints > 0);
             DecrementCommand = new RelayCommand(_ => DecPoints(),_ => Points > 0);
         }
+        public StatViewModel(Stat stat, EnemyViewModel enemyVM)
+        {
+            EnemyVM = enemyVM;
+            Stat = stat;
+            IncrementCommand = new RelayCommand(_ => IncPoints(), _ => EnemyVM.RemainingStatpoints > 0);
+            DecrementCommand = new RelayCommand(_ => DecPoints(), _ => Points > 0);
+        }
         public RelayCommand IncrementCommand { get; set; }
         public RelayCommand DecrementCommand { get; set; }
         private void IncPoints()
@@ -52,7 +60,6 @@ namespace Dungeon_RPG.ViewModel
                 CharacterVM.RemainingStatpoints--;
                 IncrementCommand.RaiseCanExecuteChanged();
                 DecrementCommand.RaiseCanExecuteChanged();
-            
         }
         private void DecPoints()
         {

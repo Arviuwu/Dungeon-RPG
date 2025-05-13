@@ -1,16 +1,22 @@
 using Dungeon_RPG.MVVM;
+using Dungeon_RPG.ViewModel;
+
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Runtime.CompilerServices;
 
 namespace Dungeon_RPG.Model
 {
     public class Character :BaseViewModel
     {
-        public string  Name { get; set; }
-        public Stat BaseHealth { get; set; } 
-        public Stat Health { get; set; }
-        public Stat BaseMana { get; set; }
+        public string Name { get; set; }
+        public string SpritePath { get; set; }
+        public Weapon HeldWeapon { get; set; }
+        public Stat CurrentHealth { get; set; } 
+        public Stat MaxHealth { get; set; }
+        public Stat CurrentMana { get; set; }
+        public Stat MaxMana { get; set; }
         public Stat Strength { get; set; }
         public Stat Dexterity { get; set; }
         public Stat Constitution { get; set; }
@@ -43,34 +49,17 @@ namespace Dungeon_RPG.Model
             Intelligence = new Stat("Intelligence", 8);
             Wisdom = new Stat("Wisdom", 8);
             Charisma = new Stat("Charisma", 8);
-
-            HookStat(Strength);
-            HookStat(Dexterity);
-            HookStat(Constitution);
-            HookStat(Intelligence);
-            HookStat(Wisdom);
-            HookStat(Charisma);
-
+            CurrentHealth = new Stat("Health", 25);
+            MaxHealth = new Stat("Current Health", 100);
+            MaxMana = new Stat("Max Mana", 100);
+            CurrentMana = new Stat("Mana", 75);
             AllStats = new ObservableCollection<Stat>
-    {
-        Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma
-    };
-        }
-
-        private void HookStat(Stat stat)
-        {
-            stat.OnStatIncreased = () =>
             {
-                if (RemainingStatpoints > 0)
-                    RemainingStatpoints--;
+                Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma
             };
-
-            stat.OnStatDecreased = () =>
-            {
-                RemainingStatpoints++;
-            };
+            HeldWeapon = new("Sword", 3, Path.Combine(AppContext.BaseDirectory, "Resources\\Sprites\\Swords\\Iicon_32_01.png"));
+            SpritePath = Path.Combine(AppContext.BaseDirectory, "Resources\\Sprites\\Characters\\Knight.png");
         }
-
-
+        
     }
 }

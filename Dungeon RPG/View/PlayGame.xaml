@@ -4,10 +4,49 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Dungeon_RPG.View"
+             xmlns:view="clr-namespace:Dungeon_RPG.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Background="White">
+             Background="White"
+             SizeChanged="UserControl_SizeChanged">
+    
     <Grid>
-        <TextBlock Text="PlayGame"/>
+        <Grid.LayoutTransform >
+            <ScaleTransform x:Name="MainScale"/>
+        </Grid.LayoutTransform>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="{Binding CharacterVM.Name}"/>
+        <Button Content="Character" Grid.Row="2" Grid.ColumnSpan="1" Style="{StaticResource MenuButton}"/>
+        <Button Content="Items" Grid.Row="3" Grid.ColumnSpan="1" Style="{StaticResource MenuButton}"/>
+        <Button Content="Abilities" Grid.Row="4" Grid.ColumnSpan="1" Style="{StaticResource MenuButton}"/>
+        <view:CharacterDisplay 
+            DataContext="{Binding CharacterVM}"
+            Grid.Column="2"
+            Grid.ColumnSpan="3"
+            Grid.Row="1"
+            Grid.RowSpan="4"/>
+        <Button
+            Content="Play"
+            Command="{Binding GoToPlay}"
+            Style="{StaticResource MenuButton}"
+            Grid.Column="6"
+            Grid.Row="3"/>
     </Grid>
+    
 </UserControl>

@@ -12,6 +12,18 @@ namespace Dungeon_RPG.ViewModel
         public CharacterViewModel(Character character)
         {
             Character = character;
+
+           
+            CurrentHealthVM = new StatViewModel(Character.CurrentHealth, this);
+            MaxHealthVM = new StatViewModel(Character.MaxHealth, this);
+            MaxManaVM = new StatViewModel(Character.MaxMana, this);
+            CurrentManaVM = new StatViewModel(Character.CurrentMana, this);
+            StrengthVM = new StatViewModel(Character.Strength, this);
+            DexterityVM = new StatViewModel(Character.Dexterity, this);
+            ConstitutionVM = new StatViewModel(Character.Constitution, this);
+            IntelligenceVM = new StatViewModel(Character.Intelligence, this);
+            WisdomVM = new StatViewModel(Character.Wisdom, this);
+            CharismaVM = new StatViewModel(Character.Charisma, this);
         }
 
         public string Name
@@ -27,122 +39,43 @@ namespace Dungeon_RPG.ViewModel
             }
         }
 
-        public Stat BaseHealth
+        public string SpritePath
         {
-            get => Character.BaseHealth;
+            get => Character.SpritePath;
             set
             {
-                if (Character.BaseHealth != value)
+                if (Character.SpritePath != value)
                 {
-                    Character.BaseHealth = value;
-                    OnPropertyChanged(nameof(BaseHealth));
+                    Character.SpritePath = value;
+                    OnPropertyChanged(nameof(SpritePath));
                 }
             }
         }
 
-        public Stat Health
+        public Weapon HeldWeapon
         {
-            get => Character.Health;
+            get => Character.HeldWeapon;
             set
             {
-                if (Character.Health != value)
+                if (Character.HeldWeapon != value)
                 {
-                    Character.Health = value;
-                    OnPropertyChanged(nameof(Health));
+                    Character.HeldWeapon = value;
+                    OnPropertyChanged(nameof(HeldWeapon));
                 }
             }
         }
 
-        public Stat BaseMana
-        {
-            get => Character.BaseMana;
-            set
-            {
-                if (Character.BaseMana != value)
-                {
-                    Character.BaseMana = value;
-                    OnPropertyChanged(nameof(BaseMana));
-                }
-            }
-        }
-
-        public Stat Strenght
-        {
-            get => Character.Strength;
-            set
-            {
-                if (Character.Strength != value)
-                {
-                    Character.Strength = value;
-                    OnPropertyChanged(nameof(Strenght));
-                }
-            }
-        }
-
-        public Stat Dexterity
-        {
-            get => Character.Dexterity;
-            set
-            {
-                if (Character.Dexterity != value)
-                {
-                    Character.Dexterity = value;
-                    OnPropertyChanged(nameof(Dexterity));
-                }
-            }
-        }
-
-        public Stat Constitution
-        {
-            get => Character.Constitution;
-            set
-            {
-                if (Character.Constitution != value)
-                {
-                    Character.Constitution = value;
-                    OnPropertyChanged(nameof(Constitution));
-                }
-            }
-        }
-
-        public Stat Intelligence
-        {
-            get => Character.Intelligence;
-            set
-            {
-                if (Character.Intelligence != value)
-                {
-                    Character.Intelligence = value;
-                    OnPropertyChanged(nameof(Intelligence));
-                }
-            }
-        }
-
-        public Stat Wisdom
-        {
-            get => Character.Wisdom;
-            set
-            {
-                if (Character.Wisdom != value)
-                {
-                    Character.Wisdom = value;
-                    OnPropertyChanged(nameof(Wisdom));
-                }
-            }
-        }
-
-        public Stat Charisma
-        {
-            get => Character.Charisma;
-            set
-            {
-                if (Character.Charisma != value)
-                {
-                    Character.Charisma = value;
-                    OnPropertyChanged(nameof(Charisma));
-                }
-            }
-        }
+       
+        public StatViewModel CurrentHealthVM { get; set; }
+        public StatViewModel MaxHealthVM { get; set; }
+        public StatViewModel MaxManaVM { get; set; }
+        public StatViewModel CurrentManaVM { get; set; }
+        public StatViewModel StrengthVM { get; set; }
+        public StatViewModel DexterityVM { get; set; }
+        public StatViewModel ConstitutionVM { get; set; }
+        public StatViewModel IntelligenceVM { get; set; }
+        public StatViewModel WisdomVM { get; set; }
+        public StatViewModel CharismaVM { get; set; }
 
         public decimal Money
         {
@@ -156,6 +89,7 @@ namespace Dungeon_RPG.ViewModel
                 }
             }
         }
+
         public int RemainingStatpoints
         {
             get => Character.RemainingStatpoints;
@@ -168,7 +102,13 @@ namespace Dungeon_RPG.ViewModel
                 }
             }
         }
-        
         public ObservableCollection<StatViewModel> AllStats { get; set; } = new();
+
+        public void Attack(EnemyViewModel enemyVM)
+        {
+            var damage = HeldWeapon.Damage;
+            enemyVM.TakeDamage(damage);
+        }
     }
+
 }

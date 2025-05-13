@@ -1,5 +1,4 @@
-﻿using Dungeon_RPG.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Dungeon_RPG.View
+namespace Dungeon_RPG.View.UserControls
 {
     /// <summary>
-    /// Interaction logic for StatAllocator.xaml
+    /// Interaction logic for Healthbar.xaml
     /// </summary>
-    public partial class StatAllocator : UserControl
+    public partial class Healthbar : UserControl
     {
-        public StatAllocator()
+        public Healthbar()
         {
             InitializeComponent();
-            //DataContext = new StatAllocatorViewModel();
         }
     }
 }

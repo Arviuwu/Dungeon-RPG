@@ -4,28 +4,32 @@
              xmlns:local="clr-namespace:Dungeon_RPG"
             
              xmlns:view="clr-namespace:Dungeon_RPG.View"
-             xmlns:vm="clr-namespace:Dungeon_RPG.ViewModel">
+             xmlns:vm="clr-namespace:Dungeon_RPG.ViewModel"
+            >
     <Application.Resources>
         
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/Styles/GlobalStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-
             <vm:LocalizationViewModel x:Key="LocalizationVM"/>
-            
+
             <DataTemplate DataType="{x:Type vm:MainMenuViewModel}">
                 <view:MainMenu />
             </DataTemplate>
             <DataTemplate DataType="{x:Type vm:CharacterCreatorViewModel}">
                 <view:CharacterCreator/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type vm:CharacterStatsViewModel}">
-                <view:CharacterStats/>
-            </DataTemplate>
             <DataTemplate DataType="{x:Type vm:PlayGameViewModel}">
                 <view:PlayGame/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:DungeonViewModel}">
+                <view:Dungeon/>
+            </DataTemplate>
+            
+            
+
         </ResourceDictionary>
+        
     </Application.Resources>
 </Application>

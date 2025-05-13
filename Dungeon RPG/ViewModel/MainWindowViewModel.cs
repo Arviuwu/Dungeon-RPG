@@ -24,7 +24,7 @@ namespace Dungeon_RPG.ViewModel
         }
         public MainMenuViewModel MainMenuVM { get; }
         public CharacterCreatorViewModel CharacterCreatorVM { get; }
-        public CharacterStatsViewModel CharacterStatsVM { get; }
+        
         public INavigationService NavigationService { get; }
         public CharacterStore CharacterStore { get; set; }
         public MainWindowViewModel(CharacterStore CharacterStore)

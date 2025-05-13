@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dungeon_RPG.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,17 @@ namespace Dungeon_RPG.View
         public PlayGame()
         {
             InitializeComponent();
+        }
+
+        private void UserControl_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            double scaleX = e.NewSize.Width / AppProperties.Width;
+            double scaleY = e.NewSize.Height / AppProperties.Height;
+
+            double scale = Math.Min(scaleX, scaleY);
+
+            MainScale.ScaleX = scale;
+            MainScale.ScaleY = scale;
         }
     }
 }

@@ -6,8 +6,12 @@
              xmlns:local="clr-namespace:Dungeon_RPG.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Background="White">
+             Background="White"
+             SizeChanged="UserControl_SizeChanged">
     <Grid>
+        <Grid.LayoutTransform >
+            <ScaleTransform x:Name="MainScale"/>
+        </Grid.LayoutTransform>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -32,18 +36,17 @@
         Grid.Column="0"
         Grid.Row="1"
         Grid.ColumnSpan="2"
-                FontSize="20"
-FontWeight="SemiBold"
+        
+                Style="{StaticResource MenuButton}"
         />
-        <Button Name="btnCreateCharButton"
+        <Button Name="MenuButton"
                 d:Content="Create Character"
                 Content="{Binding Source={StaticResource LocalizationVM}, Path=CreateCharacter}"
                 Command="{Binding GoToCreateCharacter}"
                 Grid.Column="0"
                 Grid.Row="2"
                 Grid.ColumnSpan="2"
-                FontSize="20"
-                FontWeight="SemiBold"
+                Style="{StaticResource MenuButton}"
                 />
         <Button Name="btnItemLog"
                 d:Content="Items"
@@ -51,8 +54,7 @@ FontWeight="SemiBold"
                 Grid.Column="0"
                 Grid.Row="3"
                 Grid.ColumnSpan="2"
-                FontSize="20"
-FontWeight="SemiBold"
+                Style="{StaticResource MenuButton}"
                 />
         <Button Name="btnSettings"
                 d:Content="Settings"
@@ -60,8 +62,7 @@ FontWeight="SemiBold"
                 Grid.Column="0"
                 Grid.Row="4"
                 Grid.ColumnSpan="2"
-                FontSize="20"
-FontWeight="SemiBold"
+                Style="{StaticResource MenuButton}"
                 />
         <ToggleButton 
                 Name="btnLanguage"
@@ -82,6 +83,7 @@ FontWeight="SemiBold"
         <ComboBox
                 Name="cmboSaveFile"
             ItemsSource="{Binding CharacterStore.AllCharacters}"
+            SelectedItem="{Binding SelectedCharacter}"
             DisplayMemberPath="Name"
                 Grid.Column="5"
                 Grid.Row="0"
