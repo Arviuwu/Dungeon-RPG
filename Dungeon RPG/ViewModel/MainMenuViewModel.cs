@@ -20,25 +20,30 @@ namespace Dungeon_RPG.ViewModel
             set
             {
                 selectedCharacter = value;
-                CharacterStore.CurrentCharacter = value;
+                _CharacterStore.CurrentCharacter = value;
                 OnPropertyChanged();
             }
         }
         public RelayCommand GoToCreateCharacter { get; }
         public RelayCommand GoToPlayGame { get; }
-        public CharacterStore CharacterStore { get; set; }
+        public CharacterStore _CharacterStore { get; set; }
         public MainMenuViewModel(INavigationService navigation, CharacterStore characterStore)
         {
             _navigation = navigation;
             
             GoToCreateCharacter = new RelayCommand(_ =>_navigation.NavigateTo( new CharacterCreatorViewModel(_navigation,characterStore)));
-            GoToPlayGame = new RelayCommand(_ => PlayGameCheck(_navigation, CharacterStore!));
-            CharacterStore = characterStore;
+            GoToPlayGame = new RelayCommand(_ => PlayGameCheck(_navigation, _CharacterStore!));
+            _CharacterStore = characterStore;
+            if (_CharacterStore.LastCharacter != null)
+            {
+                SelectedCharacter = _CharacterStore.AllCharacters.Find(x => x.Id == _CharacterStore.LastCharacter.Id);
+            }
         }
         public void PlayGameCheck(INavigationService _navigation,CharacterStore characterStore)
         {
-            if(CharacterStore.CurrentCharacter != null)
+            if(_CharacterStore.CurrentCharacter != null)
             {
+                _CharacterStore.LastCharacter = _CharacterStore.CurrentCharacter;
                 _navigation.NavigateTo(new PlayGameViewModel(_navigation, characterStore));
             }
             else

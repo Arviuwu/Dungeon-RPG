@@ -126,7 +126,11 @@ using System.Threading.Tasks;
             public object CurrentHealth { get; internal set; }
             public void TakeDamage(int damage)
         {
-            CurrentHealthVM.Points -= damage;
+            //CurrentHealthVM.Points -= damage;
+            if((CurrentHealthVM.Points -= damage) <= 0)
+            {
+                CurrentHealthVM.Points = 0;
+            }
         }
         }
     }

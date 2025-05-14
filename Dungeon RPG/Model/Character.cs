@@ -11,6 +11,7 @@ namespace Dungeon_RPG.Model
     public class Character :BaseViewModel
     {
         public string Name { get; set; }
+        public Guid Id { get; set; }
         public string SpritePath { get; set; }
         public Weapon HeldWeapon { get; set; }
         public Stat CurrentHealth { get; set; } 
@@ -59,6 +60,7 @@ namespace Dungeon_RPG.Model
             };
             HeldWeapon = new("Sword", 3, Path.Combine(AppContext.BaseDirectory, "Resources\\Sprites\\Swords\\Iicon_32_01.png"));
             SpritePath = Path.Combine(AppContext.BaseDirectory, "Resources\\Sprites\\Characters\\Knight.png");
+            Id = new();
         }
         
     }

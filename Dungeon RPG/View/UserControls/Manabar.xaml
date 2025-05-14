@@ -13,7 +13,7 @@
             Value="{Binding CurrentManaVM.Points}"
             MinHeight="20"
             Foreground="LightSkyBlue"
-            />
+           Margin="3" />
         <TextBlock 
             Text="{Binding CurrentManaVM.Points}"
             HorizontalAlignment="Left"
