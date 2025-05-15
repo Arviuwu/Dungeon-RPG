@@ -24,11 +24,6 @@ namespace Dungeon_RPG.ViewModel
             CharacterStore = characterStore;
             CharacterVM = new(CharacterStore.CurrentCharacter!);
 
-            foreach (Stat stat in CharacterStore.CurrentCharacter!.AllStats)
-            {
-                CharacterVM.AllStats.Add(new StatViewModel(stat, CharacterVM));
-            }
-
             GoToPlay = new(_ => _navigation.NavigateTo(new DungeonViewModel(_navigation, CharacterStore)));
             
         }
