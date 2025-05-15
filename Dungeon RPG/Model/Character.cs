@@ -60,7 +60,7 @@ namespace Dungeon_RPG.Model
             };
             HeldWeapon = new("Sword", 3, Path.Combine(AppContext.BaseDirectory, "Resources\\Sprites\\Swords\\Iicon_32_01.png"));
             SpritePath = Path.Combine(AppContext.BaseDirectory, "Resources\\Sprites\\Characters\\Knight.png");
-            Id = new();
+            Id = Guid.NewGuid();
         }
         
     }

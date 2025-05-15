@@ -13,7 +13,6 @@ namespace Dungeon_RPG.ViewModel
         {
             Character = character;
 
-           
             CurrentHealthVM = new StatViewModel(Character.CurrentHealth, this);
             MaxHealthVM = new StatViewModel(Character.MaxHealth, this);
             MaxManaVM = new StatViewModel(Character.MaxMana, this);
