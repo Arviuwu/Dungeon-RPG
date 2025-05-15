@@ -37,6 +37,10 @@ namespace Dungeon_RPG.ViewModel
 
             }
         }
+        public StatViewModel(Stat stat)
+        { 
+            Stat = stat;
+        }
         public StatViewModel(Stat stat, CharacterViewModel characterVM)
         {
             CharacterVM = characterVM;

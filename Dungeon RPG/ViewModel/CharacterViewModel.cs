@@ -14,11 +14,11 @@ namespace Dungeon_RPG.ViewModel
             Character = character;
 
            
-            CurrentHealthVM = new StatViewModel(Character.CurrentHealth, this);
+            CurrentHealthVM = new StatViewModel(Character.CurrentHealth);
             MaxHealthVM = new StatViewModel(Character.MaxHealth, this);
             MaxManaVM = new StatViewModel(Character.MaxMana, this);
             CurrentManaVM = new StatViewModel(Character.CurrentMana, this);
-            StrengthVM = new StatViewModel(Character.Strength, this);
+            StrengthVM = new StatViewModel(Character.Strength);
             DexterityVM = new StatViewModel(Character.Dexterity, this);
             ConstitutionVM = new StatViewModel(Character.Constitution, this);
             IntelligenceVM = new StatViewModel(Character.Intelligence, this);
@@ -106,9 +106,8 @@ namespace Dungeon_RPG.ViewModel
 
         public void Attack(EnemyViewModel enemyVM)
         {
-            var damage = HeldWeapon.Damage;
+            var damage = HeldWeapon.Damage + StrengthVM.Points;
             enemyVM.TakeDamage(damage);
         }
     }
-
 }

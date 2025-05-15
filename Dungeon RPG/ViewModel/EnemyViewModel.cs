@@ -19,8 +19,8 @@ using System.Threading.Tasks;
             {
                 Enemy = enemy;
 
-                MaxHealthVM = new(enemy.MaxHealth, this);
-                CurrentHealthVM = new(enemy.CurrentHealth, this);
+                MaxHealthVM = new(enemy.MaxHealth);
+                CurrentHealthVM = new(enemy.CurrentHealth);
                 MaxManaVM = new(enemy.MaxMana, this);
                 CurrentManaVM = new(enemy.CurrentMana, this);
                 StrengthVM = new(enemy.Strength, this);
