@@ -35,10 +35,7 @@ namespace Dungeon_RPG.ViewModel
             _navigation = navigation;
 
             CharacterVM = new(CharacterStore.CurrentCharacter);
-            foreach(Stat stat in CharacterStore.CurrentCharacter.AllStats)
-            {
-                CharacterVM.AllStats.Add(new StatViewModel(stat, CharacterVM));
-            }
+            
             GoToMenu = new RelayCommand(_ => GoToMenuAndDeleteChar(_navigation, CharacterStore));
             GoToPlay = new RelayCommand(_ =>  GoToPlayCmd(_navigation, CharacterStore));
         }

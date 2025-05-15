@@ -12,17 +12,17 @@ namespace Dungeon_RPG.ViewModel
         public CharacterViewModel(Character character)
         {
             Character = character;
-
+            AllStats = new();
             CurrentHealthVM = new StatViewModel(Character.CurrentHealth, this);
             MaxHealthVM = new StatViewModel(Character.MaxHealth, this);
             MaxManaVM = new StatViewModel(Character.MaxMana, this);
             CurrentManaVM = new StatViewModel(Character.CurrentMana, this);
-            StrengthVM = new StatViewModel(Character.Strength);
-            DexterityVM = new StatViewModel(Character.Dexterity, this);
-            ConstitutionVM = new StatViewModel(Character.Constitution, this);
-            IntelligenceVM = new StatViewModel(Character.Intelligence, this);
-            WisdomVM = new StatViewModel(Character.Wisdom, this);
-            CharismaVM = new StatViewModel(Character.Charisma, this);
+            AllStats.Add(StrengthVM = new StatViewModel(Character.Strength, this));
+            AllStats.Add(DexterityVM = new StatViewModel(Character.Dexterity, this));
+            AllStats.Add(ConstitutionVM = new StatViewModel(Character.Constitution, this));
+            AllStats.Add(IntelligenceVM = new StatViewModel(Character.Intelligence, this));
+            AllStats.Add(WisdomVM = new StatViewModel(Character.Wisdom, this));
+            AllStats.Add(CharismaVM = new StatViewModel(Character.Charisma, this));
         }
 
         public string Name
@@ -109,11 +109,17 @@ namespace Dungeon_RPG.ViewModel
                 if (Character.RemainingStatpoints != value)
                 {
                     Character.RemainingStatpoints = value;
+
+                    foreach(StatViewModel s in AllStats)            // notifies statVM of added available points
+                    {
+                        s.IncrementCommand.RaiseCanExecuteChanged();
+                    }
+
                     OnPropertyChanged(nameof(RemainingStatpoints));
                 }
             }
         }
-        public ObservableCollection<StatViewModel> AllStats { get; set; } = new();
+        public ObservableCollection<StatViewModel> AllStats { get; set; }
 
         public void Attack(EnemyViewModel enemyVM)
         {
