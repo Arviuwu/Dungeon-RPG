@@ -13,8 +13,7 @@ namespace Dungeon_RPG.ViewModel
         {
             Character = character;
 
-           
-            CurrentHealthVM = new StatViewModel(Character.CurrentHealth);
+            CurrentHealthVM = new StatViewModel(Character.CurrentHealth, this);
             MaxHealthVM = new StatViewModel(Character.MaxHealth, this);
             MaxManaVM = new StatViewModel(Character.MaxMana, this);
             CurrentManaVM = new StatViewModel(Character.CurrentMana, this);
@@ -39,6 +38,18 @@ namespace Dungeon_RPG.ViewModel
             }
         }
 
+        public Guid Id
+        {
+            get => Character.Id;
+            set
+            {
+                if (Character.Id != value)
+                {
+                    Character.Id = value;
+                    OnPropertyChanged(nameof(Id));
+                }
+            }
+        }
         public string SpritePath
         {
             get => Character.SpritePath;

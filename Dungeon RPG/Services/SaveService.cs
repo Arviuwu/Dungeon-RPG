@@ -37,18 +37,25 @@ namespace Dungeon_RPG.Services
                 try
                 {
                     string readJson = File.ReadAllText(fullPath);
-                    var allCharacters = JsonSerializer.Deserialize<List<Character>>(readJson, options);
-                    
-                    if (allCharacters != null)
+                    var characterStore = JsonSerializer.Deserialize<CharacterStore>(readJson, options);
+                    if (characterStore != null)
                     {
-                        HookStatCallbacks(ref allCharacters);
-                        charStore.AllCharacters = allCharacters;
-                        Debug.WriteLine("Data loaded from file.");
-                    }
-                    else
-                    {
-                        Debug.WriteLine("Loaded JSON was null.");
-                        
+
+                        if (characterStore.AllCharacters != null)
+                        {
+                            HookStatCallbacks(characterStore.AllCharacters);
+                            charStore.AllCharacters = characterStore.AllCharacters;
+                            Debug.WriteLine("Data loaded from file.");
+                        }
+                        else
+                        {
+                            Debug.WriteLine("Loaded JSON was null.");
+
+                        }
+                        if (characterStore.LastCharacter != null)
+                        {
+                           charStore.LastCharacter = characterStore.LastCharacter;
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -79,7 +86,7 @@ namespace Dungeon_RPG.Services
             
             try
             {
-                string json = JsonSerializer.Serialize(charStore.AllCharacters, options);
+                string json = JsonSerializer.Serialize(charStore, options);
                 Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
                 File.WriteAllText(fullPath, json);
 
@@ -91,7 +98,7 @@ namespace Dungeon_RPG.Services
             }
             
         }
-        void HookStatCallbacks(ref List<Character> AllCharacters)
+        void HookStatCallbacks(List<Character> AllCharacters)
         {
             foreach (var character in AllCharacters)
             {
@@ -110,6 +117,24 @@ namespace Dungeon_RPG.Services
                     stat.IncrementCommand = new RelayCommand(_ => stat.IncPoints());
                     stat.DecrementCommand = new RelayCommand(_ => stat.DecPoints());
                 }
+            }
+        }
+        void HookStatCallbackSingle(Character character)
+        {
+            foreach (var stat in character.AllStats)
+            {
+                stat.OnStatIncreased = () =>
+                {
+                    if (character.RemainingStatpoints > 0)
+                        character.RemainingStatpoints--;
+                };
+
+                stat.OnStatDecreased = () =>
+                {
+                    character.RemainingStatpoints++;
+                };
+                stat.IncrementCommand = new RelayCommand(_ => stat.IncPoints());
+                stat.DecrementCommand = new RelayCommand(_ => stat.DecPoints());
             }
         }
         public SaveService()

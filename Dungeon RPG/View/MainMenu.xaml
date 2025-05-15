@@ -82,7 +82,7 @@
                 />
         <ComboBox
                 Name="cmboSaveFile"
-            ItemsSource="{Binding CharacterStore.AllCharacters}"
+            ItemsSource="{Binding _CharacterStore.AllCharacters}"
             SelectedItem="{Binding SelectedCharacter}"
             DisplayMemberPath="Name"
                 Grid.Column="5"

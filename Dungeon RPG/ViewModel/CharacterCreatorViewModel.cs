@@ -40,13 +40,19 @@ namespace Dungeon_RPG.ViewModel
                 CharacterVM.AllStats.Add(new StatViewModel(stat, CharacterVM));
             }
             GoToMenu = new RelayCommand(_ => GoToMenuAndDeleteChar(_navigation, CharacterStore));
-            GoToPlay = new RelayCommand(_ => _navigation.NavigateTo(new PlayGameViewModel(_navigation, CharacterStore)));
+            GoToPlay = new RelayCommand(_ =>  GoToPlayCmd(_navigation, CharacterStore));
         }
         private void GoToMenuAndDeleteChar(INavigationService navigation, CharacterStore characterstore)
         {
             _navigation.NavigateTo(new MainMenuViewModel(navigation, characterstore));
             characterstore.AllCharacters.Remove(characterstore.CurrentCharacter!);
             characterstore.CurrentCharacter = null;
+        }
+        private void GoToPlayCmd(INavigationService navigation, CharacterStore _CharacterStore )
+        {
+            _navigation.NavigateTo(new PlayGameViewModel(_navigation, _CharacterStore));
+            _CharacterStore.LastCharacter = _CharacterStore.CurrentCharacter;
+
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Dungeon_RPG.Stores
     public class CharacterStore
     {
         public Character? CurrentCharacter { get; set; }
+        public Character? LastCharacter { get; set; }
         public List<Character> AllCharacters { get; set; }
         public CharacterStore()
         {
