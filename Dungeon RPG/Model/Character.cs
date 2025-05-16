@@ -50,10 +50,11 @@ namespace Dungeon_RPG.Model
             Intelligence = new Stat("Intelligence", 8);
             Wisdom = new Stat("Wisdom", 8);
             Charisma = new Stat("Charisma", 8);
-            CurrentHealth = new Stat("Health", 25);
-            MaxHealth = new Stat("Current Health", 100);
-            MaxMana = new Stat("Max Mana", 100);
-            CurrentMana = new Stat("Mana", 75);
+
+            MaxHealth = new Stat("Max Health", 100+ 2*Constitution.Points);
+            CurrentHealth = new Stat("Health", MaxHealth.Points);
+            MaxMana = new Stat("Max Mana", 100+2*Intelligence.Points);
+            CurrentMana = new Stat("Mana", MaxMana.Points);
             AllStats = new ObservableCollection<Stat>
             {
                 Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma
@@ -62,6 +63,5 @@ namespace Dungeon_RPG.Model
             SpritePath = Path.Combine(AppContext.BaseDirectory, "Resources\\Sprites\\Characters\\Knight.png");
             Id = Guid.NewGuid();
         }
-        
     }
 }

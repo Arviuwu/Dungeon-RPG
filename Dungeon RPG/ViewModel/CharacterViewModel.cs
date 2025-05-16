@@ -110,6 +110,8 @@ namespace Dungeon_RPG.ViewModel
                 {
                     Character.RemainingStatpoints = value;
 
+                    UpdateMaxHealth();
+                    UpdateMaxMana();
                     foreach(StatViewModel s in AllStats)            // notifies statVM of added available points
                     {
                         s.IncrementCommand.RaiseCanExecuteChanged();
@@ -125,6 +127,16 @@ namespace Dungeon_RPG.ViewModel
         {
             var damage = HeldWeapon.Damage + StrengthVM.Points;
             enemyVM.TakeDamage(damage);
+        }
+        public void UpdateMaxHealth()
+        {
+            MaxHealthVM.Points = 100 + ConstitutionVM.Points * 2;
+            CurrentHealthVM.Points = MaxHealthVM.Points;
+        }
+        public void UpdateMaxMana()
+        {
+            MaxManaVM.Points = 100 + IntelligenceVM.Points * 2;
+            CurrentManaVM.Points = MaxManaVM.Points;
         }
     }
 }

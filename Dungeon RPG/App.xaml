@@ -26,7 +26,9 @@
             <DataTemplate DataType="{x:Type vm:DungeonViewModel}">
                 <view:Dungeon/>
             </DataTemplate>
-            
+            <DataTemplate DataType="{x:Type vm:CharacterEditorViewModel}">
+                <view:CharacterEditor/>
+            </DataTemplate>
             
 
         </ResourceDictionary>

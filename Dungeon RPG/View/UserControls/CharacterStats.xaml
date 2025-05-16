@@ -56,14 +56,14 @@
                         </Grid.ColumnDefinitions>
 
                         <Button Width="25" Height="25" Padding="0" BorderThickness="0" Command="{Binding IncrementCommand}">
-                            <Viewbox Stretch="Uniform">
+                           
                                 <TextBlock Text="+" Margin="0" Padding="0"
                    FontFamily="Consolas" 
                    FontWeight="Bold" 
                    TextAlignment="Center"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center" />
-                            </Viewbox>
+                            
                         </Button>
                         <Border Grid.Column="1" Style="{StaticResource Test}">
                             <TextBlock Grid.Column="1"
@@ -73,14 +73,14 @@
                                 />
                         </Border>
                         <Button Width="25" Height="25" Padding="0" Grid.Column="2" BorderThickness="0" Command="{Binding DecrementCommand}">
-                            <Viewbox Stretch="Uniform">
+                            
                                 <TextBlock Text="-" Margin="0" Padding="0"
 FontFamily="Consolas" 
 FontWeight="Bold" 
 TextAlignment="Center"
 VerticalAlignment="Center"
 HorizontalAlignment="Center" />
-                            </Viewbox>
+                            
                         </Button>
                         <TextBlock Text="{Binding Name}" Grid.Column="3" HorizontalAlignment="Left" TextAlignment="Center" VerticalAlignment="Center"/>
 
