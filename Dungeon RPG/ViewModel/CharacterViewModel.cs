@@ -121,22 +121,64 @@ namespace Dungeon_RPG.ViewModel
                 }
             }
         }
+        public int Level
+        {
+            get => Character.Level;
+            set
+            {
+                if (Character.Level != value)
+                {
+                    Character.Level = value;
+                    UpdateMaxHealth();
+                    UpdateMaxMana();
+                    RemainingStatpoints++;
+                    OnPropertyChanged(nameof(Money));
+                }
+            }
+        }
+        public int Exp
+        {
+            get => Character.Exp;
+            set
+            {
+                if(value < 100)
+                {
+                    Character.Exp = value;
+                }
+                else
+                {
+                    Character.Exp = 0;
+                    Level++;
+                }
+
+                    OnPropertyChanged(nameof(Money));
+                
+            }
+        }
         public ObservableCollection<StatViewModel> AllStats { get; set; }
 
-        public void Attack(EnemyViewModel enemyVM)
+        public void Attack(EnemyViewModel enemyVM, DungeonViewModel d)
         {
-            var damage = HeldWeapon.Damage + StrengthVM.Points;
-            enemyVM.TakeDamage(damage);
+            if(enemyVM.CurrentHealthVM.Points > 0)
+            {
+                var damage = HeldWeapon.Damage + StrengthVM.Points;
+                enemyVM.TakeDamage(damage, this,d);
+            }
+            
         }
         public void UpdateMaxHealth()
         {
-            MaxHealthVM.Points = 100 + ConstitutionVM.Points * 2;
+            MaxHealthVM.Points = 100 + ConstitutionVM.Points * 2 + Level * 2;
             CurrentHealthVM.Points = MaxHealthVM.Points;
         }
         public void UpdateMaxMana()
         {
-            MaxManaVM.Points = 100 + IntelligenceVM.Points * 2;
+            MaxManaVM.Points = 100 + IntelligenceVM.Points * 2 + Level * 2;
             CurrentManaVM.Points = MaxManaVM.Points;
+        }
+        public void GainExp(int exp)
+        {
+            Exp += exp;
         }
     }
 }

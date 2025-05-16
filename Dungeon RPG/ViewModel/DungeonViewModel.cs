@@ -13,6 +13,8 @@ namespace Dungeon_RPG.ViewModel
         public CharacterViewModel CharacterVM { get; set; }
         public EnemyViewModel EnemyVM { get; set; }
         public RelayCommand AttackCommand { get; }
+        public RelayCommand ReturnCommand { get; }
+        //public bool CanReturn { get; set; }
         public DungeonViewModel( INavigationService navigation, CharacterStore characterStore)
         {
             _navigation = navigation;
@@ -23,10 +25,12 @@ namespace Dungeon_RPG.ViewModel
             EnemyVM = new EnemyViewModel(CurrentEnemy);
             
             AttackCommand = new RelayCommand(_ => attack(EnemyVM));
+            ReturnCommand = new RelayCommand(_ => _navigation.NavigateTo(new PlayGameViewModel(_navigation, CharacterStore)),_ => EnemyVM.IsDead);
         }
         public void attack(EnemyViewModel enemy)
         {
-            CharacterVM.Attack(EnemyVM);
+            CharacterVM.Attack(EnemyVM, this);
+            enemy.attack
         }
     }
 }

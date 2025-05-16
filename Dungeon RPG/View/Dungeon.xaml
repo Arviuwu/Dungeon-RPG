@@ -28,7 +28,8 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Command="{Binding AttackCommand}"/>
+        <Button Content="Attack" Command="{Binding AttackCommand}"/>
+        <Button Content="Return" Grid.Row="1" Command="{Binding ReturnCommand}"/>
         <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="4">
             <TextBlock Text="{Binding CharacterVM.Name}"
                        HorizontalAlignment="Center"

@@ -31,6 +31,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <Button Content="Menu" Grid.Row="0" Command="{Binding GoToMenu}" Style="{StaticResource MenuButton}" Grid.Column="10"/>
         <TextBlock Text="{Binding CharacterVM.Name}"/>
         <Button Command="{Binding CharacterCommand}" Content="Character" Grid.Row="2" Grid.ColumnSpan="1" Style="{StaticResource MenuButton}"/>
         <Button Content="Items" Grid.Row="3" Grid.ColumnSpan="1" Style="{StaticResource MenuButton}"/>

@@ -25,15 +25,13 @@ namespace Dungeon_RPG.Model
         public Stat Wisdom { get; set; }
         public Stat Charisma { get; set; }
         public decimal Money { get; set; }
-        
         public int RemainingStatpoints { get; set; }
-        
-        
         public ObservableCollection<Stat> AllStats { get; set; } = new();
+        public int Level { get; set; }
+        public int Exp { get; set; }
 
 
-
-        // public Weapon Selected weapon
+        
         //Armor props
         //inventory props
         //stache
@@ -59,6 +57,7 @@ namespace Dungeon_RPG.Model
             {
                 Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma
             };
+            Level = 1;
             HeldWeapon = new("Sword", 3, Path.Combine(AppContext.BaseDirectory, "Resources\\Sprites\\Swords\\Iicon_32_01.png"));
             SpritePath = Path.Combine(AppContext.BaseDirectory, "Resources\\Sprites\\Characters\\Knight.png");
             Id = Guid.NewGuid();

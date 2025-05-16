@@ -41,9 +41,10 @@ namespace Dungeon_RPG.ViewModel
         }
         private void GoToMenuAndDeleteChar(INavigationService navigation, CharacterStore characterstore)
         {
-            _navigation.NavigateTo(new MainMenuViewModel(navigation, characterstore));
+            
             characterstore.AllCharacters.Remove(characterstore.CurrentCharacter!);
             characterstore.CurrentCharacter = null;
+            _navigation.NavigateTo(new MainMenuViewModel(navigation, characterstore));
         }
         private void GoToPlayCmd(INavigationService navigation, CharacterStore _CharacterStore )
         {

@@ -25,9 +25,9 @@ namespace Dungeon_RPG.Model
         public Stat Wisdom { get; set; }
         public Stat Charisma { get; set; }
         public decimal Money { get; set; }
-
+        public int ExpWorth { get; set; }
         public int RemainingStatpoints { get; set; }
-
+        public bool IsDead { get; set; }
 
         public ObservableCollection<Stat> AllStats { get; set; } = new();
 
@@ -60,6 +60,8 @@ namespace Dungeon_RPG.Model
         };
             HeldWeapon = new("Sword", 3, Path.Combine(AppContext.BaseDirectory, "Resources\\Sprites\\Swords\\Iicon_32_01.png"));
             SpritePath = Path.Combine(AppContext.BaseDirectory, "Resources\\Sprites\\Characters\\Slime.png");
+            ExpWorth = 50;
+            IsDead = false;
         }
         public void Attack()
         {

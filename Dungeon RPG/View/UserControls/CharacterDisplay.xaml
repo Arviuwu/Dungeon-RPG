@@ -49,9 +49,14 @@ HorizontalAlignment="Center"/>
         </StackPanel>
         
         <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Level"/>
+                <TextBlock Text="{Binding Level}"/>
+            </StackPanel>
             <TextBlock Text="Equipped Weapon" HorizontalAlignment="Center" Margin="5"/>
             <ctrl:WeaponDisplay Width="70" DataContext="{Binding HeldWeapon}"/>
-    
-    </StackPanel>
+            <ctrl:Expbar/>
+
+        </StackPanel>
      </Grid>   
 </UserControl>

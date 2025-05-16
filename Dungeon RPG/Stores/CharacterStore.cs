@@ -19,6 +19,7 @@ namespace Dungeon_RPG.Stores
         public Character CreateCharacter()
         {
             Character StoreCreatedcharacter = new();
+            CurrentCharacter = StoreCreatedcharacter;
             AllCharacters.Add(StoreCreatedcharacter);
             return StoreCreatedcharacter;
         }
