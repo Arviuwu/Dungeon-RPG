@@ -31,13 +31,7 @@ namespace Dungeon_RPG.Model
 
         public ObservableCollection<Stat> AllStats { get; set; } = new();
 
-
-
-        // public Weapon Selected weapon
-        //Armor props
-        //inventory props
-        //stache
-
+        
         public Enemy()
         {
             Name = "Slime";

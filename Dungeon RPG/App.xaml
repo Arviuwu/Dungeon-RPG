@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:Dungeon_RPG"
             
              xmlns:view="clr-namespace:Dungeon_RPG.View"
-             xmlns:vm="clr-namespace:Dungeon_RPG.ViewModel"
+             xmlns:vm="clr-namespace:Dungeon_RPG.ViewModel" 
             >
     <Application.Resources>
         

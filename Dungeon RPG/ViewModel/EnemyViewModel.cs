@@ -134,7 +134,7 @@ namespace Dungeon_RPG.ViewModel
             }
         }
 
-        // Wrapped stats
+        
         public StatViewModel MaxHealthVM { get; }
         public StatViewModel CurrentHealthVM { get; }
         public StatViewModel MaxManaVM { get; }

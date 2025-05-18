@@ -15,7 +15,7 @@ namespace Dungeon_RPG.Model
 
         public static string GetString(string name)
         {
-                return  string.IsNullOrEmpty(_rm.GetString(name)) || string.IsNullOrEmpty(name) ? "???" : _rm.GetString(name);
+            return string.IsNullOrEmpty(_rm.GetString(name)) || string.IsNullOrEmpty(name) ? "???" : _rm.GetString(name);
         }
 
         public static void ChangeLanguage(string language)
