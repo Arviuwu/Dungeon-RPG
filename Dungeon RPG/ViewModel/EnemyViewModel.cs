@@ -109,33 +109,33 @@ namespace Dungeon_RPG.ViewModel
                 }
             }
         }
-    public int ExpWorth
-    {
-        get => Enemy.ExpWorth;
-        set
+        public int ExpWorth
         {
-            if (Enemy.ExpWorth != value)
+            get => Enemy.ExpWorth;
+            set
             {
-                Enemy.ExpWorth = value;
-                OnPropertyChanged();
+                if (Enemy.ExpWorth != value)
+                {
+                    Enemy.ExpWorth = value;
+                    OnPropertyChanged();
+                }
             }
         }
-    }
-    public bool IsDead
-    {
-        get => Enemy.IsDead;
-        set
+        public bool IsDead
         {
-            if (Enemy.IsDead != value)
+            get => Enemy.IsDead;
+            set
             {
-                Enemy.IsDead = value;
-                OnPropertyChanged();
+                if (Enemy.IsDead != value)
+                {
+                    Enemy.IsDead = value;
+                    OnPropertyChanged();
+                }
             }
         }
-    }
 
-    // Wrapped stats
-    public StatViewModel MaxHealthVM { get; }
+        // Wrapped stats
+        public StatViewModel MaxHealthVM { get; }
         public StatViewModel CurrentHealthVM { get; }
         public StatViewModel MaxManaVM { get; }
         public StatViewModel CurrentManaVM { get; }
@@ -150,7 +150,7 @@ namespace Dungeon_RPG.ViewModel
         public object CurrentHealth { get; internal set; }
         public void TakeDamage(int damage, CharacterViewModel c, DungeonViewModel d)
         {
-            if((CurrentHealthVM.Points - damage ) <= 0 && !IsDead) //death
+            if ((CurrentHealthVM.Points - damage) <= 0 && !IsDead) //death
             {
                 Die(c, d);
             }
@@ -161,15 +161,19 @@ namespace Dungeon_RPG.ViewModel
         }
         public void Die(CharacterViewModel c, DungeonViewModel d)
         {
-            
+
             c.GainExp(ExpWorth);
             CurrentHealthVM.Points = 0;
             IsDead = true;
             d.ReturnCommand.RaiseCanExecuteChanged();
         }
-        public void Attack(CharacterViewModel c)
+        public void Attack(CharacterViewModel c, DungeonViewModel d)
         {
-
+            if (c.CurrentHealthVM.Points > 0 && !IsDead)
+            {
+                var damage = HeldWeapon.Damage + StrengthVM.Points;
+                c.TakeDamage(damage,c,d);
+            }
         }
     }
 }

@@ -100,6 +100,18 @@ namespace Dungeon_RPG.ViewModel
                 }
             }
         }
+        public bool IsDead
+        {
+            get => Character.IsDead;
+            set
+            {
+                if (Character.IsDead != value)
+                {
+                    Character.IsDead = value;
+                    OnPropertyChanged(nameof(IsDead));
+                }
+            }
+        }
 
         public int RemainingStatpoints
         {
@@ -179,6 +191,25 @@ namespace Dungeon_RPG.ViewModel
         public void GainExp(int exp)
         {
             Exp += exp;
+        }
+        public void TakeDamage(int damage, CharacterViewModel c, DungeonViewModel d)
+        {
+            if ((CurrentHealthVM.Points - damage) <= 0 && !IsDead) //death
+            {
+                Die(c, d);
+            }
+            else
+            {
+                CurrentHealthVM.Points -= damage;
+            }
+        }
+        public void Die(CharacterViewModel c, DungeonViewModel d)
+        {
+
+            
+            CurrentHealthVM.Points = 0;
+            IsDead = true;
+            d.ReturnCommand.RaiseCanExecuteChanged();
         }
     }
 }

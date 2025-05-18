@@ -29,7 +29,7 @@ namespace Dungeon_RPG.Model
         public ObservableCollection<Stat> AllStats { get; set; } = new();
         public int Level { get; set; }
         public int Exp { get; set; }
-
+        public bool IsDead { get; set; }
 
         
         //Armor props

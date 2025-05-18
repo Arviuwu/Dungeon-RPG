@@ -21,7 +21,7 @@ namespace Dungeon_RPG.Services
         private readonly string relativePath = "Data/Save.json";
         public void Load(ref CharacterStore charStore)
         {
-            
+
             string fullPath = Path.Combine(AppContext.BaseDirectory, relativePath);
 
             var options = new JsonSerializerOptions
@@ -54,21 +54,21 @@ namespace Dungeon_RPG.Services
                         }
                         if (characterStore.LastCharacter != null)
                         {
-                           charStore.LastCharacter = characterStore.LastCharacter;
+                            charStore.LastCharacter = characterStore.LastCharacter;
                         }
                     }
                 }
                 catch (Exception ex)
                 {
                     Debug.WriteLine("Error loading JSON: " + ex.Message);
-                    
+
                 }
             }
             else
             {
                 Debug.WriteLine("File not found. Creating default data...");
-                
-                
+
+
             }
 
         }
@@ -80,10 +80,10 @@ namespace Dungeon_RPG.Services
             var options = new JsonSerializerOptions
             {
                 WriteIndented = true,
-               
+
 
             };
-            
+
             try
             {
                 string json = JsonSerializer.Serialize(charStore, options);
@@ -96,7 +96,7 @@ namespace Dungeon_RPG.Services
             {
                 Debug.WriteLine("Failed to save data on close: " + ex.Message);
             }
-            
+
         }
         void HookStatCallbacks(List<Character> AllCharacters)
         {

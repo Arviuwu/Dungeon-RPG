@@ -14,8 +14,8 @@ namespace Dungeon_RPG.ViewModel
         public EnemyViewModel EnemyVM { get; set; }
         public RelayCommand AttackCommand { get; }
         public RelayCommand ReturnCommand { get; }
-        //public bool CanReturn { get; set; }
-        public DungeonViewModel( INavigationService navigation, CharacterStore characterStore)
+        public bool TurnInProgress { get; set; }
+        public DungeonViewModel(INavigationService navigation, CharacterStore characterStore)
         {
             _navigation = navigation;
             CharacterStore = characterStore;
@@ -23,14 +23,32 @@ namespace Dungeon_RPG.ViewModel
             CharacterVM = new CharacterViewModel(CurrentCharacter);
             CurrentEnemy = new Enemy();
             EnemyVM = new EnemyViewModel(CurrentEnemy);
+
+            TurnInProgress = false;
             
-            AttackCommand = new RelayCommand(_ => attack(EnemyVM));
-            ReturnCommand = new RelayCommand(_ => _navigation.NavigateTo(new PlayGameViewModel(_navigation, CharacterStore)),_ => EnemyVM.IsDead);
+
+            
+
+            AttackCommand = new RelayCommand(_ => attack(), _ => !TurnInProgress);
+            ReturnCommand = new RelayCommand(_ => _navigation.NavigateTo(new PlayGameViewModel(_navigation, CharacterStore)), _ => EnemyVM.IsDead || CharacterVM.IsDead);
         }
-        public void attack(EnemyViewModel enemy)
+        public async Task attack()
         {
-            CharacterVM.Attack(EnemyVM, this);
-            enemy.attack
+            if (!TurnInProgress)
+            {
+                TurnInProgress = true;
+                AttackCommand.RaiseCanExecuteChanged();// prevent attack button spamming
+                CharacterVM.Attack(EnemyVM, this);
+                await Task.Delay(1000);
+                EnemyVM.Attack(CharacterVM, this);
+                await Task.Delay(300);
+                if (EnemyVM.IsDead)
+                    return;
+                TurnInProgress = false;
+                AttackCommand.RaiseCanExecuteChanged();
+            }
         }
+
+        
     }
 }
