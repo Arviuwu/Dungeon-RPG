@@ -1,82 +1,52 @@
 ﻿using Dungeon_RPG.Model;
 using Dungeon_RPG.MVVM;
 using Dungeon_RPG.Stores;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 
 namespace Dungeon_RPG.Services
 {
     public class SaveService
     {
-        private readonly string relativePath = "Data/Save.json";
+        static private readonly string relativePath = "Data/Save.json";
+        static private readonly string fullPath = Path.Combine(AppContext.BaseDirectory, relativePath);
+
+        static private readonly JsonSerializerOptions options = new JsonSerializerOptions
+        {
+            WriteIndented = true,
+            PropertyNameCaseInsensitive = true
+        };
+
         public void Load(ref CharacterStore charStore)
         {
-            
-            string fullPath = Path.Combine(AppContext.BaseDirectory, relativePath);
-
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true,
-                PropertyNameCaseInsensitive = true
-            };
 
             Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
 
-            if (File.Exists(fullPath))
+            try
             {
-                try
-                {
-                    string readJson = File.ReadAllText(fullPath);
-                    var allCharacters = JsonSerializer.Deserialize<List<Character>>(readJson, options);
-                    
-                    if (allCharacters != null)
-                    {
-                        HookStatCallbacks(ref allCharacters);
-                        charStore.AllCharacters = allCharacters;
-                        Debug.WriteLine("Data loaded from file.");
-                    }
-                    else
-                    {
-                        Debug.WriteLine("Loaded JSON was null.");
-                        
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine("Error loading JSON: " + ex.Message);
-                    
-                }
-            }
-            else
-            {
-                Debug.WriteLine("File not found. Creating default data...");
-                
-                
-            }
+                string readJson = File.ReadAllText(fullPath);
+                var allCharacters = JsonSerializer.Deserialize<List<Character>>(readJson, options);
 
+                if (allCharacters != null)
+                {
+                    HookStatCallbacks(ref allCharacters);
+                    charStore.AllCharacters = allCharacters;
+                    Debug.WriteLine("Data loaded from file.");
+                }
+                else
+                {
+                    Debug.WriteLine("Loaded JSON was null.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error loading JSON: " + ex.Message);
+            }
         }
         public static void Save(CharacterStore charStore)
         {
-            string relativePath = "Data/Save.json";
-            string fullPath = Path.Combine(AppContext.BaseDirectory, relativePath);
-
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true,
-               
-
-            };
-            
             try
             {
                 string json = JsonSerializer.Serialize(charStore.AllCharacters, options);
@@ -89,7 +59,6 @@ namespace Dungeon_RPG.Services
             {
                 Debug.WriteLine("Failed to save data on close: " + ex.Message);
             }
-            
         }
         void HookStatCallbacks(ref List<Character> AllCharacters)
         {
