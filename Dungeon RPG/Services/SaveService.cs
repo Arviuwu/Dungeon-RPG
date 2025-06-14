@@ -80,8 +80,6 @@ namespace Dungeon_RPG.Services
             var options = new JsonSerializerOptions
             {
                 WriteIndented = true,
-
-
             };
 
             try
