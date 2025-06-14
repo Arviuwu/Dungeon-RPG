@@ -2,6 +2,7 @@
 using Dungeon_RPG.MVVM;
 using Dungeon_RPG.Services;
 using Dungeon_RPG.Stores;
+using Dungeon_RPG.ViewModel.Wrappers;
 using System;
 using System.Collections.Generic;
 using System.IO;

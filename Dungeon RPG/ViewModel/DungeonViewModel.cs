@@ -2,6 +2,7 @@
 using Dungeon_RPG.Model;
 using Dungeon_RPG.Stores;
 using Dungeon_RPG.Services;
+using Dungeon_RPG.ViewModel.Wrappers;
 namespace Dungeon_RPG.ViewModel
 {
     public class DungeonViewModel

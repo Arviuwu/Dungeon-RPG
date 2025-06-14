@@ -3,7 +3,7 @@ using Dungeon_RPG.MVVM;
 using System;
 using System.Collections.ObjectModel;
 
-namespace Dungeon_RPG.ViewModel
+namespace Dungeon_RPG.ViewModel.Wrappers
 {
     public class CharacterViewModel : BaseViewModel
     {
@@ -194,7 +194,7 @@ namespace Dungeon_RPG.ViewModel
         }
         public void TakeDamage(int damage, CharacterViewModel c, DungeonViewModel d)
         {
-            if ((CurrentHealthVM.Points - damage) <= 0 && !IsDead) //death
+            if (CurrentHealthVM.Points - damage <= 0 && !IsDead) //death
             {
                 Die(c, d);
             }

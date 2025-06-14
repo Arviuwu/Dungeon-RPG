@@ -19,8 +19,19 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -34,7 +45,7 @@
         Content="{Binding Source={StaticResource LocalizationVM}, Path=Play}"
         Command="{Binding GoToPlayGame}"
         Grid.Column="0"
-        Grid.Row="1"
+        Grid.Row="3"
         Grid.ColumnSpan="2"
         
                 Style="{StaticResource MenuButton}"
@@ -44,7 +55,7 @@
                 Content="{Binding Source={StaticResource LocalizationVM}, Path=CreateCharacter}"
                 Command="{Binding GoToCreateCharacter}"
                 Grid.Column="0"
-                Grid.Row="2"
+                Grid.Row="4"
                 Grid.ColumnSpan="2"
                 Style="{StaticResource MenuButton}"
                 />
@@ -52,7 +63,7 @@
                 d:Content="Items"
                 Content="{Binding Source={StaticResource LocalizationVM}, Path=Items}"
                 Grid.Column="0"
-                Grid.Row="3"
+                Grid.Row="5"
                 Grid.ColumnSpan="2"
                 Style="{StaticResource MenuButton}"
                 />
@@ -60,7 +71,7 @@
                 d:Content="Settings"
                 Content="{Binding Source={StaticResource LocalizationVM}, Path=Settings}"
                 Grid.Column="0"
-                Grid.Row="4"
+                Grid.Row="6"
                 Grid.ColumnSpan="2"
                 Style="{StaticResource MenuButton}"
                 />
@@ -71,23 +82,24 @@
                 Command="{Binding Source={StaticResource LocalizationVM}, Path=ToggleLanguageCommand}"
                 Grid.Column="5"
                 Grid.Row="1"
-                Margin="20"/>
+                Margin="2"/>
         <Label  Name="lblSaveFile"
                 d:Content="Selected Save File"
                 Content="{Binding Source={StaticResource LocalizationVM}, Path=SaveFile}"
                 Grid.ColumnSpan="2"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Right"
-                Grid.Column="3"
+                Grid.Column="8"
                 />
         <ComboBox
                 Name="cmboSaveFile"
             ItemsSource="{Binding _CharacterStore.AllCharacters}"
             SelectedItem="{Binding SelectedCharacter}"
             DisplayMemberPath="Name"
-                Grid.Column="5"
+                Grid.Column="10"
+            Grid.ColumnSpan="2"
                 Grid.Row="0"
-                Margin="20"
+                Margin="2"
                 HorizontalContentAlignment="Left"
             VerticalContentAlignment="Center"/>
     </Grid>

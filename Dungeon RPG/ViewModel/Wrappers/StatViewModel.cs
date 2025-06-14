@@ -2,7 +2,7 @@
 using Dungeon_RPG.MVVM;
 using System.Diagnostics;
 
-namespace Dungeon_RPG.ViewModel
+namespace Dungeon_RPG.ViewModel.Wrappers
 {
     public class StatViewModel : BaseViewModel
     {

@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dungeon RPG", "Dungeon RPG\Dungeon RPG.csproj", "{1794699B-8CC0-46ED-B0EB-6B28B65D41B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{8CFCDEFB-BD5F-4710-94C9-AEB7C17CD43E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1794699B-8CC0-46ED-B0EB-6B28B65D41B8} = {1794699B-8CC0-46ED-B0EB-6B28B65D41B8}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -114,8 +114,8 @@ namespace Dungeon_RPG.Services
                     {
                         character.RemainingStatpoints++;
                     };
-                    stat.IncrementCommand = new RelayCommand(_ => stat.IncPoints());
-                    stat.DecrementCommand = new RelayCommand(_ => stat.DecPoints());
+                    //stat.IncrementCommand = new RelayCommand(_ => stat.IncPoints());
+                    //stat.DecrementCommand = new RelayCommand(_ => stat.DecPoints());
                 }
             }
         }
@@ -133,8 +133,8 @@ namespace Dungeon_RPG.Services
                 {
                     character.RemainingStatpoints++;
                 };
-                stat.IncrementCommand = new RelayCommand(_ => stat.IncPoints());
-                stat.DecrementCommand = new RelayCommand(_ => stat.DecPoints());
+                //stat.IncrementCommand = new RelayCommand(_ => stat.IncPoints());
+                //stat.DecrementCommand = new RelayCommand(_ => stat.DecPoints());
             }
         }
         public SaveService()

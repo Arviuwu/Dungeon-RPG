@@ -22,24 +22,24 @@ namespace Dungeon_RPG.Model
         {
             Name = name;
             Points = points;
-            IncrementCommand = new RelayCommand(_ => IncPoints());
-            DecrementCommand = new RelayCommand(_ => DecPoints());
+        //    IncrementCommand = new RelayCommand(_ => IncPoints());
+        //    DecrementCommand = new RelayCommand(_ => DecPoints());
         }
 
-        public void IncPoints()
-        {
-            OnStatIncreased?.Invoke();
-            Points++;
-        }
+        //public void IncPoints()
+        //{
+        //    OnStatIncreased?.Invoke();
+        //    Points++;
+        //}
 
-        public void DecPoints()
-        {
-            if (Points > 0)
-            {
-                Points--;
-                OnStatDecreased?.Invoke();
-            }
-        }
+        //public void DecPoints()
+        //{
+        //    if (Points > 0)
+        //    {
+        //        Points--;
+        //        OnStatDecreased?.Invoke();
+        //    }
+        //}
     }
 
 }

@@ -1,6 +1,5 @@
 ﻿using Dungeon_RPG.Model;
 using Dungeon_RPG.MVVM;
-using Dungeon_RPG.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Dungeon_RPG.ViewModel
+namespace Dungeon_RPG.ViewModel.Wrappers
 {
     public class EnemyViewModel : BaseViewModel
     {
@@ -150,7 +149,7 @@ namespace Dungeon_RPG.ViewModel
         public object CurrentHealth { get; internal set; }
         public void TakeDamage(int damage, CharacterViewModel c, DungeonViewModel d)
         {
-            if ((CurrentHealthVM.Points - damage) <= 0 && !IsDead) //death
+            if (CurrentHealthVM.Points - damage <= 0 && !IsDead) //death
             {
                 Die(c, d);
             }

@@ -57,10 +57,7 @@ namespace Dungeon_RPG.Model
             ExpWorth = 50;
             IsDead = false;
         }
-        public void Attack()
-        {
-
-        }
+        
         }
     }
 

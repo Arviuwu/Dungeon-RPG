@@ -5,7 +5,7 @@
             
              xmlns:view="clr-namespace:Dungeon_RPG.View"
              xmlns:vm="clr-namespace:Dungeon_RPG.ViewModel" 
-            >
+             xmlns:vmwrap="clr-namespace:Dungeon_RPG.ViewModel.Wrappers">
     <Application.Resources>
         
         <ResourceDictionary>
